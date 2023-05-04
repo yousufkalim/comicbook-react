@@ -1,0 +1,74 @@
+.sellNftContainer {
+  background: linear-gradient(89.9deg, rgba(21, 39, 65, 0.7) 0.09%, rgba(13, 21, 38, 0.7) 99.92%);
+  width: 100%;
+  padding: 2% 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sellNftTextDiv {
+  width: 45%;
+}
+.sellNftTitle {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 68px;
+  width: 70%;
+  background: radial-gradient(
+      87.68% 87.68% at 95.36% 14.36%,
+      #ffd840 0%,
+      #f3acff 55.86%,
+      #8aecff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.sellNftDesp {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 50px;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  margin: 2% 0;
+  width: 70%;
+}
+.sellNftBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 30%;
+  font-family: 'Orbitron';
+  font-weight: 700;
+  font-size: 21px;
+  gap: 2%;
+  line-height: 27px;
+  margin-top: 2%;
+  /* identical to box height */
+  padding: 2% 3%;
+  color: #000000;
+  background: radial-gradient(
+      87.68% 87.68% at 95.36% 14.36%,
+      #ffd840 0%,
+      #f3acff 55.86%,
+      #8aecff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  border-radius: 4px;
+}
+
+.sellNftGifDiv {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.sellNftGifDiv img {
+  width: 80%;
+}

@@ -1,0 +1,183 @@
+.topDropsContainer {
+  padding: 5%;
+  width: 100%;
+}
+.topDropsHeaderDiv {
+  width: 100%;
+}
+.topDropsHeaderLogo {
+  width: 3%;
+}
+.topDropsHeaderLogo img {
+  width: 100%;
+}
+.topDropsHeaderTextDiv {
+  margin-left: 3%;
+}
+.topDropsHeaderSubTitle {
+  font-family: 'Rubik';
+  font-style: normal;
+  width: fit-content;
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  background: radial-gradient(
+      87.68% 87.68% at 95.36% 14.36%,
+      #ffd840 0%,
+      #f3acff 55.86%,
+      #8aecff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.topDropsHeaderDivider {
+  width: 3%;
+  height: 2px;
+  margin: 0.5% 0;
+  background: radial-gradient(
+      87.68% 87.68% at 95.36% 14.36%,
+      #ffd840 0%,
+      #f3acff 55.86%,
+      #8aecff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  border-radius: 4px;
+}
+.topDropsHeaderTitle {
+  font-family: 'Orbitron';
+  width: fit-content;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 54px;
+  background: radial-gradient(
+      87.68% 87.68% at 95.36% 14.36%,
+      #ffd840 0%,
+      #f3acff 55.86%,
+      #8aecff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.topDropsGridContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.topDropsLeftGrid {
+  width: 31%;
+}
+.topDropsLeftTop {
+  width: 100%;
+}
+.topDropsLeftBottom {
+  width: 100%;
+}
+.topDropsCenterGrid {
+  width: 31%;
+}
+.topDropsRightGrid {
+  width: 31%;
+}
+.topDropsRightTop {
+  width: 100%;
+}
+.topDropsRightBottom {
+  width: 100%;
+}
+
+/* Top Drops Card Css */
+
+.topDropCardContainer {
+  width: 100%;
+  margin: 3% 0;
+}
+.topDropCardImageDiv {
+  width: 100%;
+  height: 25vh;
+}
+.topDropCardImageDiv2 {
+  width: 100%;
+  height: 54.5vh;
+}
+.topDropCardImageDiv img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.topDropCardImageDiv2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.topDropCardTextDiv {
+  width: 100%;
+
+  background: linear-gradient(89.9deg, #152741 0.09%, #0d1526 99.92%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3% 2%;
+}
+.topDropCardTextDiv2 {
+  width: 100%;
+
+  background: linear-gradient(89.9deg, #152741 0.09%, #0d1526 99.92%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6% 2%;
+}
+.topDropCardTitleDiv {
+  width: 70%;
+}
+.topDropCardTitle {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+}
+.topDropCardCreator {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  background: radial-gradient(
+    87.68% 87.68% at 95.36% 14.36%,
+    #ffd840 0%,
+    #f3acff 55.86%,
+    #8aecff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.topDropCardBtnDiv {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  padding: 2%;
+  justify-content: center;
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+
+  color: #000000;
+  background: radial-gradient(
+      87.68% 87.68% at 95.36% 14.36%,
+      #ffd840 0%,
+      #f3acff 55.86%,
+      #8aecff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  border-radius: 4px;
+}

@@ -1,0 +1,24 @@
+.RecomendedItemsContainer {
+  padding: 5%;
+}
+.RecomendedItemsHeading {
+  font-family: 'Orbitron';
+  width: fit-content;
+  font-weight: 700;
+  font-size: 50px;
+  background: radial-gradient(
+    87.68% 87.68% at 95.36% 14.36%,
+    #ffd840 0%,
+    #f3acff 55.86%,
+    #8aecff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.RecomendedItemsSliderDiv {
+  width: 100%;
+}
+.RecomendedItemsCarousel {
+  padding: 5% 0 !important;
+}

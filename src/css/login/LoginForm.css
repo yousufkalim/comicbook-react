@@ -1,0 +1,162 @@
+.loginFormContainer {
+  padding: 10% 5% 5% 5%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.loginFormImageDiv {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loginFormImage {
+  width: 100%;
+}
+.loginFormImage img {
+  width: 100%;
+}
+.loginFormDiv {
+  width: 45%;
+  padding: 5%;
+}
+.loginFormSubDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15% 5%;
+  background: linear-gradient(89.9deg, rgba(21, 39, 65, 0.7) 0.09%, rgba(13, 21, 38, 0.7) 99.92%);
+}
+.loginFormTitleDiv {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 5% 0;
+}
+.loginFormTitle {
+  font-family: 'Orbitron';
+  font-weight: 700;
+  font-size: 34px;
+  display: flex;
+  margin: 2% 0;
+  align-items: center;
+  color: #ffffff;
+}
+.loginFormDesp {
+  font-family: 'Rubik';
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.loginFormInputDiv {
+  width: 100%;
+  padding: 2% 0;
+  margin: 2% 0;
+}
+.loginFormLabel {
+  font-family: 'Rubik';
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  margin-bottom: 2%;
+}
+.loginFormInput {
+  width: 100%;
+}
+.loginFormInput input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1.5px solid rgba(255, 255, 255, 0.13);
+  border-radius: 4px;
+  padding: 4% 2%;
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+.loginFormInput input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.loginFormCheckDiv {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2% 0;
+}
+.loginFormCheckboxDiv {
+  font-family: 'DM Sans';
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  width: 50%;
+  text-align: left;
+}
+.loginFormCheckboxDiv input {
+  margin-right: 3%;
+  background: transparent;
+}
+.loginFormCheckox {
+  background: transparent !important;
+}
+.loginFormForgetDiv {
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  color: #ffffff;
+  opacity: 0.6;
+  width: 50%;
+  text-align: right;
+}
+.loginFormButton {
+  width: 100%;
+  padding: 2% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(
+      87.68% 87.68% at 95.36% 14.36%,
+      #ffd840 0%,
+      #f3acff 55.86%,
+      #8aecff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  border-radius: 4px;
+  font-family: 'Orbitron';
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 37px;
+  text-align: center;
+  color: #000000;
+  margin: 4% 0;
+}
+.loginFormSignUpDiv {
+  font-family: 'Rubik';
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.72);
+}
+.loginFormSignUpDiv span {
+  color: #ffffff;
+}

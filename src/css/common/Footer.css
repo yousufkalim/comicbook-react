@@ -1,0 +1,78 @@
+.footerContainer {
+  width: 100%;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.footerMainDiv {
+  width: 95%;
+  border-top: 2px solid #4e617a44;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.footerLogoDiv {
+  width: 20%;
+  margin: 2% 0;
+}
+.footerLogoDiv img {
+  width: 100%;
+}
+.footerDesp {
+  text-align: center;
+  width: 35%;
+  font-family: 'Rubik';
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+  color: #ffffff;
+}
+.footerIconsDiv {
+  display: flex;
+  gap: 10px;
+  margin: 1% 0;
+}
+.footerIcon {
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  border-radius: 50px;
+  align-items: center;
+}
+.footerIcon img {
+  width: 15px;
+  height: 15px;
+}
+.footerMenuDiv {
+  gap: 5%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  margin: 1% 0;
+}
+.footerMenu {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: 'Rubik';
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+}
+.footerCopyRightDiv {
+  width: 100%;
+  padding: 1% 0;
+  background: linear-gradient(270deg, #2155b1 12.84%, #fa4045 107.56%);
+  font-family: 'Rubik';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+  color: #ffffff;
+}

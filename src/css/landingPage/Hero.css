@@ -1,0 +1,119 @@
+.heroContainer {
+  width: 100%;
+  background-color: #000000;
+  height: 100%;
+  color: aliceblue;
+  padding-top: 10%;
+}
+.heroSubContainer {
+  /* background-color: #332828; */
+  padding: 0 5%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.heroLeftDiv {
+  width: 60%;
+}
+.heroSubTitle {
+  letter-spacing: 0.05em;
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 50px;
+  /* or 208% */
+
+  letter-spacing: 0.05em;
+
+  background: radial-gradient(
+      87.68% 87.68% at 95.36% 14.36%,
+      #ffd840 0%,
+      #f3acff 55.86%,
+      #8aecff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.heroTitleDivider {
+  height: 3px;
+  width: 5%;
+  background: radial-gradient(
+      87.68% 87.68% at 95.36% 14.36%,
+      #ffd840 0%,
+      #f3acff 55.86%,
+      #8aecff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  border-radius: 4px;
+  margin: 2% 0;
+}
+.heroTitle {
+  letter-spacing: 0.05em;
+  margin: 2% 0;
+
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 80px;
+  /* line-height: 50px; */
+  /* identical to box height, or 62% */
+
+  background: radial-gradient(
+      87.68% 87.68% at 95.36% 14.36%,
+      #ffd840 0%,
+      #f3acff 55.86%,
+      #8aecff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.heroDesp {
+  width: 70%;
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  line-height: 40px;
+}
+.heroBtn {
+  text-align: center;
+  text-transform: capitalize;
+  width: 20%;
+  padding: 2% 0;
+  margin: 4% 0;
+  background: radial-gradient(
+      87.68% 87.68% at 95.36% 14.36%,
+      #ffd840 0%,
+      #f3acff 55.86%,
+      #8aecff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  border-radius: 4px;
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #000000;
+}
+.heroRightDiv {
+  width: 40%;
+}
+.heroRightDiv img {
+  width: 100%;
+  border-radius: 150px;
+}

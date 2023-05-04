@@ -1,0 +1,120 @@
+.newDropsContainer {
+  width: 100%;
+  padding: 2% 5%;
+}
+.newDropsHeaderDiv {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: self-end;
+}
+.newDropsHeaderLeft {
+  width: 45%;
+}
+.newDropsHeaderIconGif {
+}
+.newDropsHeaderSubTitle {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 60px;
+  /* identical to box height, or 312% */
+
+  letter-spacing: 0.05em;
+
+  background: radial-gradient(
+      87.68% 87.68% at 95.36% 14.36%,
+      #ffd840 0%,
+      #f3acff 55.86%,
+      #8aecff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.newDropsHeaderDivider {
+  height: 3px;
+  width: 5%;
+
+  background: radial-gradient(
+      87.68% 87.68% at 95.36% 14.36%,
+      #ffd840 0%,
+      #f3acff 55.86%,
+      #8aecff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  border-radius: 4px;
+}
+.newDropsHeaderTitle {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 68px;
+  /* identical to box height */
+
+  text-transform: capitalize;
+
+  color: #ffffff;
+}
+.newDropsHeaderRight {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5%;
+}
+.newDropsUpComingBtn {
+  padding: 2% 4%;
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  color: #000000;
+  background: radial-gradient(
+      87.68% 87.68% at 95.36% 14.36%,
+      #ffd840 0%,
+      #f3acff 55.86%,
+      #8aecff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  border-radius: 4px;
+}
+.newDropsAvailableBtn {
+  padding: 2% 4%;
+
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  /* identical to box height */
+
+  text-align: center;
+
+  background: linear-gradient(180deg, #b5d1ff 0%, #f4b1e5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  /* border-radius: 4px; */
+  /* border: 1px solid linear-gradient(180deg, #b5d1ff 0%, #f4b1e5 100%); */
+  border: 2px solid #c2c9ff;
+
+  /* border-image-source: linear-gradient(180deg, #c2c9ff 0%, #f8c0a7 100%); */
+  /* border-image: linear-gradient(180deg, #c2c9ff 0%, #f8c0a7 100%); */
+}
+.newDropsSliderDiv {
+  padding: 1% 0;
+  width: 100%;
+  margin: 4% 0;
+}
+.newDropsSliderItems {
+  width: 95%;
+}

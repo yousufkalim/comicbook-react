@@ -1,0 +1,110 @@
+.FeaturedDropContainer {
+  padding: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.FeaturedDropTextDiv {
+  width: 35%;
+}
+.FeaturedDropSubTitle {
+  font-family: 'Rubik';
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 50px;
+
+  letter-spacing: 0.05em;
+
+  background: radial-gradient(
+      87.68% 87.68% at 95.36% 14.36%,
+      #ffd840 0%,
+      #f3acff 55.86%,
+      #8aecff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.FeaturedDropTitleDivider {
+  height: 3px;
+  width: 10%;
+  background: radial-gradient(
+      87.68% 87.68% at 95.36% 14.36%,
+      #ffd840 0%,
+      #f3acff 55.86%,
+      #8aecff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  border-radius: 4px;
+  margin: 1% 0;
+}
+.FeaturedDropTitle {
+  font-family: 'Orbitron';
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 68px;
+
+  background: radial-gradient(
+      87.68% 87.68% at 95.36% 14.36%,
+      #ffd840 0%,
+      #f3acff 55.86%,
+      #8aecff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.FeaturedDropDesp {
+  font-family: 'Rubik';
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 35px;
+  leading-trim: both;
+  text-edge: cap;
+  letter-spacing: 0.1em;
+
+  color: #ffffff;
+}
+.FeaturedDropBtn {
+  text-align: center;
+  text-transform: capitalize;
+  width: 30%;
+  padding: 3% 0;
+  margin: 5% 0;
+
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #000000;
+  background: radial-gradient(
+      87.68% 87.68% at 95.36% 14.36%,
+      #ffd840 0%,
+      #f3acff 55.86%,
+      #8aecff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  border-radius: 4px;
+}
+
+.FeaturedDropImageDiv {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.FeaturedDropImage {
+  width: 75%;
+}
+.FeaturedDropImage img {
+  width: 100%;
+}

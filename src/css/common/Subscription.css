@@ -1,0 +1,94 @@
+.subscriptionContainer {
+  padding: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.subscriptionImageDiv {
+  width: 50%;
+}
+.subscriptionImageDiv img {
+  width: 100%;
+}
+.subscriptionTextDiv {
+  width: 40%;
+}
+.subscriptionTitle {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 54px;
+  background: radial-gradient(
+      87.68% 87.68% at 95.36% 14.36%,
+      #ffd840 0%,
+      #f3acff 55.86%,
+      #8aecff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.subscriptionDesp {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 160%;
+  display: flex;
+  align-items: center;
+  color: #fffffd;
+  margin: 2% 0;
+}
+.subscriptionInputDiv {
+  width: 100%;
+  display: flex;
+  background-color: white;
+  margin-top: 5%;
+}
+.subscriptionInput {
+  width: 70%;
+  padding: 3% 2%;
+  border: none;
+  outline: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  color: #1e1e1e;
+}
+.subscriptionInput::placeholder {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  color: #1e1e1e;
+}
+.subscriptionBtn {
+  width: 29%;
+  margin: 0.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+      87.68% 87.68% at 95.36% 14.36%,
+      #ffd840 0%,
+      #f3acff 55.86%,
+      #8aecff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  border-radius: 4px;
+  font-family: 'Rubik';
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}

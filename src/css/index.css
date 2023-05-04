@@ -1,19 +1,37 @@
 /* Importing all CSS files */
 @import url('./Form.css');
 @import url('./Transcript.css');
-
+@import url('./common/Navbar.css');
+@import url('./common/NftCard.css');
+@import url('./common/NewDropCard.css');
+@import url('./common/Footer.css');
+@import url('./common/Subscription.css');
+@import url('./landingPage//Hero.css');
+@import url('./landingPage/AboutUs.css');
+@import url('./landingPage/SellNft.css');
+@import url('./landingPage/NewDrops.css');
+@import url('./landingPage/FeaturedDrop.css');
+@import url('./landingPage/TopDrops.css');
+@import url('./NftDetailPage/NftDetailSection.css');
+@import url('./NftDetailPage/RecomendedItems.css');
+@import url('./marketPlace/NftFiltration.css');
+@import url('./login/LoginForm.css');
+@import url('./signup/SignUpForm.css');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
 /* Defaults */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-
+.container {
+  background: #000000;
+}
 /* Primary Variables */
 :root {
   --primary: 'green';
 }
 
-body {
+/* body {
   padding: 20px;
-}
+} */

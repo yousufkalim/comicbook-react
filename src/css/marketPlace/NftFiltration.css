@@ -1,0 +1,48 @@
+.NftFiltrationContainer {
+  padding: 5%;
+  background-color: red;
+  width: 100%;
+  font-family: 'Orbitron';
+}
+.NftFiltrationHeader {
+  background-color: green;
+  width: 100%;
+  margin-top: 5%;
+}
+.NftFiltrationHeaderTitle {
+  width: fit-content;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 50px;
+  background: radial-gradient(
+    87.68% 87.68% at 95.36% 14.36%,
+    #ffd840 0%,
+    #f3acff 55.86%,
+    #8aecff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.NftFiltrationHeaderDesp {
+  font-family: 'Rubik';
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.1em;
+  color: #cccccc;
+  width: 45%;
+  margin: 2% 0;
+}
+.NftFiltrationSection {
+  width: 100%;
+  background-color: blue;
+}
+.NftFiltrationTabsDiv {
+  width: 100%;
+  background-color: pink;
+}
+.NftFiltrationMainDiv {
+  width: 100%;
+  background-color: purple;
+}

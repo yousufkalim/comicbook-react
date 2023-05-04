@@ -1,0 +1,146 @@
+.NewDropCardContainer {
+  width: 100%;
+  position: relative;
+}
+.NewDropCardBgImgDiv {
+  width: 100%;
+  height: 100%;
+}
+.NewDropCardBgImgDiv img {
+  width: 100%;
+  z-index: 1;
+  cursor: pointer;
+}
+.NewDropCardHoverDiv {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0; /* add left: 0 to position the div */
+  background: linear-gradient(89.9deg, rgba(21, 39, 65, 0.8) 0.09%, rgba(13, 21, 38, 0.8) 99.92%);
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+}
+.NewDropCardHoverDiv:hover {
+  opacity: 1;
+}
+/* .NewDropCardBgImgDiv:hover .NewDropCardHoverDiv {
+  visibility: visible;
+} */
+/* #cardHover {
+  visibility: hidden;
+}
+#cardImg:hover + #cardHover {
+  visibility: visible;
+  opacity: 1;
+} */
+.NewDropCardBidBtn {
+  width: fit-content;
+  padding: 4% 5%;
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  /* identical to box height */
+
+  color: #000000;
+  background: radial-gradient(
+      87.68% 87.68% at 95.36% 14.36%,
+      #ffd840 0%,
+      #f3acff 55.86%,
+      #8aecff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  border-radius: 3px;
+}
+.NewDropCardDetialDiv {
+  width: 100%;
+}
+.NewDropCardTitle {
+  font-family: 'Rubik';
+  font-weight: 600;
+  font-size: 36px;
+  color: #ffffff;
+}
+.NewDropCardAuctionDiv {
+  display: flex;
+  gap: 2%;
+  margin: 2% 0;
+}
+.NewDropCardAuction {
+  font-family: 'Rubik';
+  font-weight: 500;
+  font-size: 15px;
+  color: #ffffff;
+}
+.NewDropCardBottomDiv {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2%;
+}
+.NewDropCardCurrentBidDiv {
+  font-family: 'Rubik';
+  color: #ffffff;
+  width: 30%;
+  height: 100%;
+}
+.NewDropCardBidTitle {
+  font-weight: 400;
+  font-size: 14px;
+}
+.NewDropCardEthPrice {
+  display: flex;
+  align-items: center;
+  gap: 5%;
+  line-height: 50px;
+}
+.NewDropCardEthAmount {
+  font-weight: 500;
+  font-size: 22px;
+}
+.NewDropCardEthSymbol {
+  font-weight: 500;
+  font-size: 22px;
+}
+.NewDropCardUSDPrice {
+  font-weight: 400;
+  font-size: 11px;
+}
+.NewDropCardDivider {
+  height: 70px;
+  width: 2px;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+}
+.NewDropCardExpiryDiv {
+  width: 60%;
+  font-family: 'Rubik';
+}
+.NewDropCardExpiryTitle {
+  font-weight: 400;
+  font-size: 17px;
+  color: #ffffff;
+}
+.NewDropCardExpiryTimeDiv {
+  display: flex;
+  gap: 7%;
+}
+.NewDropCardTime {
+  color: #ffffff;
+  font-family: 'Rubik';
+}
+.NewDropCardTimeNum {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 50px;
+}
+.NewDropCardTimeAlp {
+  font-weight: 400;
+  font-size: 11px;
+}

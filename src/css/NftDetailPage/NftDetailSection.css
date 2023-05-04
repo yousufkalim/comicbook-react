@@ -1,0 +1,231 @@
+.nftDetailContainer {
+  padding: 10% 5% 5% 5%;
+  width: 100%;
+}
+.nftDetailMainDiv {
+  width: 100%;
+}
+.nftDetailUpperDiv {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.nftDetailImageDiv {
+  width: 55%;
+  position: relative;
+}
+.NftCardImage {
+  width: 100%;
+  z-index: 1;
+}
+.NftCardZoomIcon {
+  position: absolute;
+  z-index: 2;
+  top: 3%;
+  right: 3%;
+  width: 100px;
+  height: 100px;
+}
+.nftDetailInfoDiv {
+  width: 43%;
+  padding: 2%;
+  background: linear-gradient(89.9deg, rgba(21, 39, 65, 0.7) 0.09%, rgba(13, 21, 38, 0.7) 99.92%);
+}
+.nftDetailCollectionDiv {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nftDetailCollectionName {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  color: #ffffff;
+  opacity: 0.6;
+}
+.nftDetailIcons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8%;
+}
+.nftDetailTitleDiv {
+  width: 100%;
+  margin: 4% 0;
+}
+.nftDetailName {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 46px;
+  color: #ffffff;
+}
+.nftDetailOwner {
+  font-family: 'Rubik';
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  opacity: 0.95;
+}
+.nftDetailOwner span {
+  color: #f3acff;
+}
+.nftDetailExpiryDiv {
+  width: 100%;
+}
+.nftDetailExpiryDate {
+  font-family: 'Rubik';
+  font-weight: 500;
+  font-size: 25px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  opacity: 0.95;
+  margin: 4% 0;
+}
+.nftDetailExpiryCounterDiv {
+  width: 100%;
+  display: flex;
+  gap: 5%;
+}
+.nftDetailExpiryCounter {
+  font-family: 'Rubik';
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  opacity: 0.8;
+}
+.nftDetailDivider {
+  width: 100%;
+  opacity: 0.6;
+  border: 3px solid #ffffff;
+  margin: 6% 0;
+}
+.nftDetailPriceDiv {
+  width: 100%;
+}
+.nftDetailPriceHeading {
+  font-family: 'Rubik';
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 31px;
+  color: #ffffff;
+}
+.nftDetailPrice {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 51px;
+  color: #ffffff;
+  margin: 5% 0;
+  display: flex;
+  align-items: center;
+  gap: 3%;
+}
+.nftDetailPrice img {
+  width: 55px;
+  height: 55px;
+}
+.nftDetailPrice span {
+  font-family: 'DM Sans';
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 31px;
+  text-align: right;
+  color: #ffffff;
+}
+.nftDetailButtonDiv {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10%;
+}
+.nftDetailBuyBtn {
+  width: 47%;
+  padding: 4% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Orbitron';
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 31px;
+  text-transform: capitalize;
+  color: #000000;
+  background: radial-gradient(
+      87.68% 87.68% at 95.36% 14.36%,
+      #ffd840 0%,
+      #f3acff 55.86%,
+      #8aecff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  border-radius: 4px;
+}
+.nftDetailBidBtn {
+  width: 47%;
+  padding: 4% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Orbitron';
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 29px;
+  text-align: center;
+  background: linear-gradient(180deg, #b5d1ff 0%, #f4b1e5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  border: 2px solid #b5d1ff;
+  border-radius: 4px;
+}
+.nftDetailLowerDiv {
+  margin: 3% 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.nftDetailHistoryDiv {
+  width: 55%;
+}
+.nftDetailCollapseDiv {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  align-items: center;
+  background: linear-gradient(89.9deg, rgba(21, 39, 65, 0.7) 0.09%, rgba(13, 21, 38, 0.7) 99.92%);
+}
+.nftDetailCollapseTitleDiv {
+  display: flex;
+  align-items: center;
+  gap: 15%;
+}
+.nftDetailCollapseTitleDiv img {
+  width: 40px;
+  height: 40px;
+}
+.nftDetailCollapseTitle {
+  font-family: 'Rubik';
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 31px;
+  color: #ffffff;
+}
+.nftDetailDropedDiv {
+  padding: 10px;
+  color: white;
+}
+
+.nftDetailBidDiv {
+  width: 43%;
+}

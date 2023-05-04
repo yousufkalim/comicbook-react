@@ -1,0 +1,230 @@
+.signUpContainer {
+  padding: 10% 5%;
+  width: 100%;
+}
+.signUpHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.signUpHeaderTitle {
+  font-family: 'Orbitron';
+  font-weight: 700;
+  font-size: 80px;
+  background: radial-gradient(
+    87.68% 87.68% at 95.36% 14.36%,
+    #ffd840 0%,
+    #f3acff 55.86%,
+    #8aecff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.signUpHeaderDesp {
+  font-family: 'Rubik';
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 0.1em;
+  color: #cccccc;
+}
+.signUpFormDiv {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*  asas*/
+.signUpForm {
+  width: 45%;
+  padding: 5%;
+}
+.signUpFormSubDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5%;
+  background: linear-gradient(89.9deg, rgba(21, 39, 65, 0.7) 0.09%, rgba(13, 21, 38, 0.7) 99.92%);
+}
+.signUpFormTitleDiv {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 5% 0;
+}
+.signUpFormTitle {
+  font-family: 'Orbitron';
+  font-weight: 700;
+  font-size: 34px;
+  display: flex;
+  margin: 2% 0;
+  align-items: center;
+  color: #ffffff;
+}
+.signUpFormDesp {
+  font-family: 'Rubik';
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.72);
+}
+.signUpSocialLogInDiv {
+  width: 100%;
+}
+.signUpSocialLogIn {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 4px;
+  margin: 3% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2% 0;
+  gap: 2%;
+}
+.signUpSocialLogInIcon {
+  width: 25px;
+  height: 25px;
+}
+.signUpSocialLogInIcon img {
+  width: 100%;
+}
+.signUpSocialLogInText {
+  font-family: 'Rubik';
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 37px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #292d3f;
+}
+.signUpFormDividerDiv {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4% 0;
+}
+.signUpFormDivider {
+  width: 45%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.13);
+}
+.signUpFormDividerText {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.32);
+}
+.signUpFormInputDiv {
+  width: 100%;
+  padding: 1% 0;
+  margin: 1% 0;
+}
+.signUpFormLabel {
+  font-family: 'Rubik';
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  margin-bottom: 2%;
+}
+.signUpFormInput {
+  width: 100%;
+}
+.signUpFormInput input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1.5px solid rgba(255, 255, 255, 0.13);
+  border-radius: 4px;
+  padding: 4% 2%;
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+.signUpFormInput input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.signUpFormCheckDiv {
+  width: 100%;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  margin: 3% 0;
+}
+.signUpFormCheckboxDiv {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.72);
+  width: 100%;
+}
+.signUpFormCheckboxDiv input {
+  margin-right: 3%;
+  background: transparent;
+}
+
+.signUpFormButton {
+  width: 100%;
+  padding: 2% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(
+      87.68% 87.68% at 95.36% 14.36%,
+      #ffd840 0%,
+      #f3acff 55.86%,
+      #8aecff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  border-radius: 4px;
+  font-family: 'Orbitron';
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 37px;
+  text-align: center;
+  color: #000000;
+  margin: 4% 0;
+}
+.signUpFormSignInDiv {
+  font-family: 'Rubik';
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.72);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.signUpFormSignInDiv span {
+  color: #ffffff;
+  margin-left: 2%;
+}
