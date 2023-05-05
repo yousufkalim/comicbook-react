@@ -1,11 +1,9 @@
 .NftFiltrationContainer {
   padding: 5%;
-  background-color: red;
   width: 100%;
   font-family: 'Orbitron';
 }
 .NftFiltrationHeader {
-  background-color: green;
   width: 100%;
   margin-top: 5%;
 }
@@ -13,7 +11,6 @@
   width: fit-content;
   font-weight: 700;
   font-size: 80px;
-  line-height: 50px;
   background: radial-gradient(
     87.68% 87.68% at 95.36% 14.36%,
     #ffd840 0%,
@@ -36,13 +33,226 @@
 }
 .NftFiltrationSection {
   width: 100%;
-  background-color: blue;
+  margin-top: 3%;
 }
 .NftFiltrationTabsDiv {
   width: 100%;
-  background-color: pink;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+.NftFiltrationTab {
+  font-family: 'Rubik' !important;
+  font-weight: 600 !important;
+  font-size: 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  color: #777e91 !important;
+  text-transform: capitalize !important;
+}
+.NftFiltrationTab:focus {
+  /* font-family: 'Rubik' !important; */
+  /* font-weight: 600 !important; */
+  /* font-size: 18px !important; */
+  /* display: flex !important; */
+  /* align-items: center !important; */
+  color: #000000 !important;
+  background: radial-gradient(
+    87.68% 87.68% at 95.36% 14.36%,
+    #ffd840 0%,
+    #f3acff 55.86%,
+    #8aecff 100%
+  ) !important;
+  /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+  border-radius: 4px !important;
+}
+.NftFiltrationFilterTab {
+  width: 27%;
+  display: flex;
+  align-items: center;
+  gap: 2%;
+  font-family: 'Orbitron';
+  font-weight: 700;
+  font-size: 40px;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+.NftFiltrationCategoryTab {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  font-family: 'Orbitron';
+  font-weight: 700;
+  font-size: 22px;
+}
+/* .NftFiltrationResultDiv {
+  font-family: 'Orbitron';
+  font-weight: 700;
+  font-size: 22px;
+  color: #ffffff ;
+} */
 .NftFiltrationMainDiv {
   width: 100%;
-  background-color: purple;
+  display: flex;
+  justify-content: space-between;
+}
+.NftFiltrationSideDiv {
+  width: 27%;
+  padding: 1% 0;
+  height: fit-content;
+}
+.NftFilterBorder {
+  border: 2px solid gray;
+  margin-top: 2%;
+  padding: 2% 2% 4% 2%;
+}
+.NftFiltrationDropDownBox {
+  width: 100%;
+  border: 2px solid #fff;
+  padding: 3% 2%;
+  margin: 6% 0;
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+}
+.NftFiltrationDropDownDiv {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.NftFiltrationDropTitle {
+  display: flex;
+  align-items: center;
+  color: #fcfcfd;
+}
+.NftFiltrationCollapseDiv {
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+
+  color: #ffffff;
+  padding: 2% 0;
+}
+.NftFiltrationPriceDrop {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.NftFiltrationPriceLimitDiv {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.NftFiltrationPriceLimitLeft {
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.NftFiltrationPriceLimitMin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gray;
+  width: 40%;
+  padding: 5% 0;
+}
+.NftFiltrationPriceLimitDivider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+}
+.NftFiltrationPriceLimitMax {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gray;
+  width: 40%;
+  padding: 5% 0;
+}
+.NftFiltrationPriceLimitRight {
+  width: 12%;
+  padding: 2% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(
+      87.68% 87.68% at 95.36% 14.36%,
+      #ffd840 0%,
+      #f3acff 55.86%,
+      #8aecff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  border-radius: 2px;
+}
+.NftFiltrationResetDiv {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2%;
+}
+.NftFiltrationResetIcon {
+  display: flex;
+  align-items: center;
+}
+.NftFiltrationResetText {
+  font-family: 'Rubik';
+  font-weight: 500;
+  font-size: 20px;
+  text-align: right;
+  color: #f4f5f6;
+  opacity: 0.6;
+}
+.NftFiltrationGridContainer {
+  display: flex;
+  align-items: center;
+  gap: 2%;
+}
+.NftFiltrationGrid {
+  margin: 1% 0;
+}
+.NftFiltrationLoadBtnDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+.NftFiltrationLoadBtn {
+  font-family: 'Rubik';
+  font-weight: 500;
+  font-size: 20px;
+  color: #000000;
+  background: radial-gradient(
+    87.68% 87.68% at 95.36% 14.36%,
+    #ffd840 0%,
+    #f3acff 55.86%,
+    #8aecff 100%
+  );
+  border-radius: 4px;
+  padding: 1% 2%;
+}
+/* mui classes */
+.css-19kzrtu {
+  padding: 2% 0 !important;
+}
+.css-1aquho2-MuiTabs-indicator {
+  display: none !important;
+}
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  color: #000000 !important;
+  background: radial-gradient(
+    87.68% 87.68% at 95.36% 14.36%,
+    #ffd840 0%,
+    #f3acff 55.86%,
+    #8aecff 100%
+  ) !important;
+  border-radius: 4px !important;
 }

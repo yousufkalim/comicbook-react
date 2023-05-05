@@ -1,7 +1,7 @@
 // Init
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Logo from '../../assets/gif/Logo.gif';
+import Logo from '../../assets/gif/cba.gif';
 
 // Component
 export default function Navbar() {
@@ -22,13 +22,13 @@ export default function Navbar() {
             Market place
           </NavLink>
           <NavLink
-            to="/about"
+            to="/nftdetail"
             className={({ isActive }) => (isActive ? 'activeNavLink' : 'navLink')}
           >
             About
           </NavLink>
           <NavLink
-            to="contactus"
+            to="/signup"
             className={({ isActive }) => (isActive ? 'activeNavLink' : 'navLink')}
           >
             Contact Us

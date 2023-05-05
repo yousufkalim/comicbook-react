@@ -1,6 +1,7 @@
 // Init
 import React from 'react';
 import Checkbox from '@mui/material/Checkbox';
+import { NavLink } from 'react-router-dom';
 import GoogleIcon from '../../assets/images/google_icon.svg';
 import AppleIcon from '../../assets/images/apple_icon.svg';
 // Component
@@ -17,7 +18,10 @@ export default function SignUpForm() {
             <div className="signUpFormTitleDiv">
               <div className="signUpFormTitle">Create your account</div>
               <div className="signUpFormSignInDiv">
-                Already registered? <span> Sign in here</span>
+                Already registered?
+                <NavLink className="signUpFormSignIn" to="/login">
+                  Sign in here
+                </NavLink>{' '}
               </div>
               {/* <div className="signUpFormDesp">Please enter your details</div> */}
             </div>

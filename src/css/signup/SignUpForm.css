@@ -224,7 +224,8 @@
   align-items: center;
   justify-content: center;
 }
-.signUpFormSignInDiv span {
+.signUpFormSignIn {
   color: #ffffff;
   margin-left: 2%;
+  text-decoration: none;
 }
