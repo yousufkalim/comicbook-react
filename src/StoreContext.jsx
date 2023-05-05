@@ -21,6 +21,7 @@ export function StoreProvider({ children }) {
   const [store, setStore] = useState({
     loggedIn: false,
     user: {},
+    token: {},
   });
 
   // eslint-disable-next-line react/jsx-no-constructed-context-values

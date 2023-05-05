@@ -1,8 +1,38 @@
 // Init
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import api from '../../api';
 import LoginImg from '../../assets/images/login_nft.png';
+import { UpdateStore } from '../../StoreContext';
+
 // Component
 export default function LoginForm() {
+  const [user, setUser] = useState({
+    email: '',
+    password: '',
+  });
+
+  const nav = useNavigate();
+  const updateStore = UpdateStore();
+
+  const handleUserOnChange = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
+  const handleLogin = () => {
+    api('post', 'auth/login', {
+      email: user?.email,
+      password: user?.password,
+    })
+      .then((res) => {
+        updateStore({ user: res?.data?.user });
+        localStorage.setItem('token', res?.data?.token);
+        nav('/');
+      })
+      .catch((err) => {
+        toast.error(err);
+      });
+  };
   return (
     <div className="loginFormContainer">
       <div className="loginFormImageDiv">
@@ -19,13 +49,25 @@ export default function LoginForm() {
           <div className="loginFormInputDiv">
             <div className="loginFormLabel">Email</div>
             <div className="loginFormInput">
-              <input placeholder="Email address" />
+              <input
+                placeholder="Email address"
+                value={user?.email}
+                name="email"
+                onChange={handleUserOnChange}
+                type="text"
+              />
             </div>
           </div>
           <div className="loginFormInputDiv">
             <div className="loginFormLabel">Password</div>
             <div className="loginFormInput">
-              <input placeholder="Password" />
+              <input
+                placeholder="Password"
+                value={user?.password}
+                name="password"
+                onChange={handleUserOnChange}
+                type="password"
+              />
             </div>
           </div>
           <div className="loginFormCheckDiv">
@@ -35,7 +77,9 @@ export default function LoginForm() {
             </div>
             <div className="loginFormForgetDiv">Forgot password?</div>
           </div>
-          <div className="loginFormButton">Login</div>
+          <button onClick={handleLogin} type="submit" className="loginFormButton">
+            Login
+          </button>
           <div className="loginFormSignUpDiv">
             Don’t Have an account?<span>Sign Up here</span>
           </div>

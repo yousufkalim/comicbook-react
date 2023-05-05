@@ -1,10 +1,42 @@
 // Init
-import React from 'react';
+import React, { useState } from 'react';
 import Checkbox from '@mui/material/Checkbox';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import GoogleIcon from '../../assets/images/google_icon.svg';
 import AppleIcon from '../../assets/images/apple_icon.svg';
+import api from '../../api';
+
 // Component
 export default function SignUpForm() {
+  const [user, setUser] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+  });
+
+  const nav = useNavigate();
+
+  const handleUserOnChange = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
+
+  const handleContinue = () => {
+    api('post', 'users/', {
+      first_name: user?.firstName,
+      last_name: user?.lastName,
+      email: user?.email,
+      password: user?.password,
+    })
+      .then(() => {
+        toast.success('User Created');
+        nav('/login');
+      })
+      .catch((err) => {
+        toast.error(err);
+      });
+  };
   return (
     <div className="signUpContainer">
       <div className="signUpHeader">
@@ -43,22 +75,47 @@ export default function SignUpForm() {
 
             <div className="signUpFormInputDiv">
               <div className="signUpFormInput">
-                <input placeholder="First Name" />
+                <input
+                  placeholder="First Name"
+                  value={user?.firstName}
+                  type="text"
+                  name="firstName"
+                  onChange={handleUserOnChange}
+                />
               </div>
             </div>
             <div className="signUpFormInputDiv">
               <div className="signUpFormInput">
-                <input placeholder="Last Name" />
+                <input
+                  placeholder="Last Name"
+                  value={user?.lastName}
+                  type="text"
+                  name="lastName"
+                  onChange={handleUserOnChange}
+                />
               </div>
             </div>
             <div className="signUpFormInputDiv">
               <div className="signUpFormInput">
-                <input placeholder="Email address" />
+                <input
+                  placeholder="Email address"
+                  value={user?.email}
+                  type="email"
+                  name="email"
+                  onChange={handleUserOnChange}
+                />
               </div>
             </div>
             <div className="signUpFormInputDiv">
               <div className="signUpFormInput">
-                <input placeholder="Password" />
+                <input
+                  placeholder="Password"
+                  value={user?.password}
+                  type="password"
+                  name="password"
+                  onChange={handleUserOnChange}
+                  autoComplete="new-password"
+                />
               </div>
             </div>
             <div className="signUpFormCheckDiv">
@@ -68,7 +125,9 @@ export default function SignUpForm() {
                 and Privacy Policy
               </div>
             </div>
-            <div className="signUpFormButton">Continue</div>
+            <button type="submit" className="signUpFormButton" onClick={handleContinue}>
+              Continue
+            </button>
           </div>
         </div>
       </div>

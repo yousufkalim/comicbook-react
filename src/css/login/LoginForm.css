@@ -5,22 +5,27 @@
   align-items: center;
   justify-content: space-between;
 }
+
 .loginFormImageDiv {
   width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .loginFormImage {
   width: 100%;
 }
+
 .loginFormImage img {
   width: 100%;
 }
+
 .loginFormDiv {
   width: 45%;
   padding: 5%;
 }
+
 .loginFormSubDiv {
   display: flex;
   align-items: center;
@@ -29,6 +34,7 @@
   padding: 15% 5%;
   background: linear-gradient(89.9deg, rgba(21, 39, 65, 0.7) 0.09%, rgba(13, 21, 38, 0.7) 99.92%);
 }
+
 .loginFormTitleDiv {
   width: 100%;
   text-align: center;
@@ -38,6 +44,7 @@
   flex-direction: column;
   margin: 5% 0;
 }
+
 .loginFormTitle {
   font-family: 'Orbitron';
   font-weight: 700;
@@ -47,6 +54,7 @@
   align-items: center;
   color: #ffffff;
 }
+
 .loginFormDesp {
   font-family: 'Rubik';
   font-weight: 500;
@@ -62,6 +70,7 @@
   padding: 2% 0;
   margin: 2% 0;
 }
+
 .loginFormLabel {
   font-family: 'Rubik';
   font-weight: 500;
@@ -72,9 +81,11 @@
   color: #ffffff;
   margin-bottom: 2%;
 }
+
 .loginFormInput {
   width: 100%;
 }
+
 .loginFormInput input {
   width: 100%;
   background: rgba(255, 255, 255, 0.03);
@@ -89,9 +100,11 @@
   align-items: center;
   color: #ffffff;
 }
+
 .loginFormInput input::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
+
 .loginFormCheckDiv {
   width: 100%;
   display: flex;
@@ -99,6 +112,7 @@
   align-items: center;
   margin: 2% 0;
 }
+
 .loginFormCheckboxDiv {
   font-family: 'DM Sans';
   font-weight: 500;
@@ -109,13 +123,16 @@
   width: 50%;
   text-align: left;
 }
+
 .loginFormCheckboxDiv input {
   margin-right: 3%;
   background: transparent;
 }
+
 .loginFormCheckox {
   background: transparent !important;
 }
+
 .loginFormForgetDiv {
   font-family: 'Poppins';
   font-weight: 500;
@@ -126,7 +143,9 @@
   width: 50%;
   text-align: right;
 }
+
 .loginFormButton {
+  cursor: pointer;
   width: 100%;
   padding: 2% 0;
   display: flex;
@@ -148,6 +167,7 @@
   color: #000000;
   margin: 4% 0;
 }
+
 .loginFormSignUpDiv {
   font-family: 'Rubik';
   font-weight: 500;
@@ -157,6 +177,7 @@
   align-items: center;
   color: rgba(255, 255, 255, 0.72);
 }
+
 .loginFormSignUpDiv span {
   color: #ffffff;
 }
