@@ -22,13 +22,13 @@ export default function Navbar() {
             Market place
           </NavLink>
           <NavLink
-            to="/about"
+            to="/nftdetail"
             className={({ isActive }) => (isActive ? 'activeNavLink' : 'navLink')}
           >
             About
           </NavLink>
           <NavLink
-            to="contactus"
+            to="/signup"
             className={({ isActive }) => (isActive ? 'activeNavLink' : 'navLink')}
           >
             Contact Us
