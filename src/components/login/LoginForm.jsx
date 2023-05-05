@@ -1,5 +1,6 @@
 // Init
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import LoginImg from '../../assets/images/login_nft.png';
 // Component
 export default function LoginForm() {
@@ -37,7 +38,10 @@ export default function LoginForm() {
           </div>
           <div className="loginFormButton">Login</div>
           <div className="loginFormSignUpDiv">
-            Don’t Have an account?<span>Sign Up here</span>
+            Don’t Have an account?
+            <NavLink className="loginFormSignUp" to="/signup">
+              Sign Up here
+            </NavLink>{' '}
           </div>
         </div>
       </div>
