@@ -30,7 +30,7 @@ env:
   APP_NAME: 'comicbook' # Set this to your app name
   COMPONENT_NAME: 'frontend' # Set this to your component name (e.g, frontend, admin, backend)
   RELEASE_PATH: /root/comicbook/${{ github.event_name == 'push' && 'dev' || github.event.inputs.environment }}/frontend # This is dyanmic release path and it will be unique for each environment, e.g: /root/react/dev/frontend
-  NODE_ENV: ${{ github.event_name == 'push' && 'dev' || github.event.inputs.environment }} # It will auto check the current environment
+  NODE_ENV: ${{ github.event_name == 'push' && 'DEV' || github.event.inputs.environment }} # It will auto check the current environment
 
 on:
   push:
@@ -41,8 +41,8 @@ on:
       environment:
         description: 'Target environment (dev)'
         type: choice
-        options: 
-        - dev
+        options:
+          - DEV
         required: true
 
 jobs:
@@ -72,9 +72,9 @@ jobs:
       - name: Transfer files to server
         uses: appleboy/scp-action@master
         with:
-          host: ${{ secrets.DEV_SERVER }}
-          username: ${{ secrets.DEV_USER }}
-          key: ${{ secrets.DEV_KEY }}
+          host: ${{ secrets[format('{0}_SERVER', env.NODE_ENV)] }}
+          username: ${{ secrets[format('{0}_USER', env.NODE_ENV)] }}
+          key: ${{ secrets[format('{0}_KEY', env.NODE_ENV)] }}
           rm: true
           source: 'build/*'
           target: ${{ env.RELEASE_PATH }}
@@ -85,9 +85,9 @@ jobs:
       - name: Copy config files
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.DEV_SERVER }}
-          username: ${{ secrets.DEV_USER }}
-          key: ${{ secrets.DEV_KEY }}
+          host: ${{ secrets[format('{0}_SERVER', env.NODE_ENV)] }}
+          username: ${{ secrets[format('{0}_USER', env.NODE_ENV)] }}
+          key: ${{ secrets[format('{0}_KEY', env.NODE_ENV)] }}
           script: |
-            echo '${{ vars.DEV_NGINX }}' > /etc/nginx/sites-available/${{ env.APP_NAME }}-${{ env.COMPONENT_NAME }}-${{ env.NODE_ENV }}.conf
+            echo '${{ vars[format('{0}_NGINX', env.NODE_ENV)] }}' > /etc/nginx/sites-available/${{ env.APP_NAME }}-${{ env.COMPONENT_NAME }}-${{ env.NODE_ENV }}.conf
             sudo systemctl restart nginx
