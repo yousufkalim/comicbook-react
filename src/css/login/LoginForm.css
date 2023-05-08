@@ -175,9 +175,13 @@
   line-height: 33px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
   color: rgba(255, 255, 255, 0.72);
 }
 
-.loginFormSignUpDiv span {
+.loginFormSignUp {
+  text-decoration: none;
   color: #ffffff;
+  margin-left: 2%;
 }

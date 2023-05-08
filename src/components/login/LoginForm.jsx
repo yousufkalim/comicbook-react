@@ -1,6 +1,6 @@
 // Init
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import api from '../../api';
 import LoginImg from '../../assets/images/login_nft.png';
@@ -81,7 +81,10 @@ export default function LoginForm() {
             Login
           </button>
           <div className="loginFormSignUpDiv">
-            Don’t Have an account?<span>Sign Up here</span>
+            Don’t Have an account?
+            <NavLink className="loginFormSignUp" to="/signup">
+              Sign Up here
+            </NavLink>{' '}
           </div>
         </div>
       </div>

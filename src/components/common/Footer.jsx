@@ -1,7 +1,7 @@
 // Init
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Logo from '../../assets/gif/Logo.gif';
+import Logo from '../../assets/gif/cba.gif';
 import Facebook from '../../assets/images/facebook.svg';
 import Instagram from '../../assets/images/instagram.svg';
 import Linkedin from '../../assets/images/linkedin.svg';
