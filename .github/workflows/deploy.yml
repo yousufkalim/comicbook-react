@@ -47,7 +47,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       # The first step checks out the code from the repository.
@@ -89,5 +89,5 @@ jobs:
           username: ${{ secrets[format('{0}_USER', env.NODE_ENV)] }}
           key: ${{ secrets[format('{0}_KEY', env.NODE_ENV)] }}
           script: |
-            echo '${{ vars[format('{0}_NGINX', env.NODE_ENV)] }}' > /etc/nginx/sites-available/${{ env.APP_NAME }}-${{ env.COMPONENT_NAME }}-${{ env.NODE_ENV }}.conf
+            echo '${{ vars[format('{0}_NGINX', env.NODE_ENV)] }}' > ${{ env.RELEASE_PATH }}/build/nginx.conf
             sudo systemctl restart nginx
