@@ -1,13 +1,13 @@
 /* eslint-disable react/require-default-props */
 /* eslint-disable react/jsx-props-no-spreading */
 // Init
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import { Collapse, Grid } from '@mui/material';
+import { Collapse, Grid, Checkbox, FormControlLabel } from '@mui/material';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import TuneIcon from '@mui/icons-material/Tune';
@@ -15,10 +15,11 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import NftCard from '../common/NftCard';
 import FilterHeader from '../common/FilterHeader';
+import api from '../../api';
+
 // Component
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
-
   return (
     <div
       role="tabpanel"
@@ -38,8 +39,8 @@ function TabPanel(props) {
 
 TabPanel.propTypes = {
   children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
+  index: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
 };
 
 function a11yProps(index) {
@@ -51,14 +52,60 @@ function a11yProps(index) {
 
 export default function NftFiltration() {
   const [showFilter, setShowFilter] = useState(false);
-  console.log('showFilter', showFilter);
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState('All items');
   const [recentDrop, setRecentDrop] = React.useState(false);
   const [priceDrop, setPriceDrop] = React.useState(false);
   const [statusDrop, setStatusDrop] = React.useState(false);
-  const [collectionDrop, setCollectionDrop] = React.useState(false);
+  // const [collectionDrop, setCollectionDrop] = React.useState(false);
   const [categoriesDrop, setCategoriesDrop] = React.useState(false);
   const [currencyDrop, setCurrencyDrop] = React.useState(false);
+  const [priceValues, setPriceValues] = useState({
+    min: '',
+    max: '',
+  });
+  const [nftData, setNftData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
+  const [checked, setChecked] = useState({
+    recent: false,
+    top: false,
+    lowest: false,
+  });
+  const getAllNFTData = async () => {
+    await api('get', 'nft/').then((res) => {
+      setNftData(res?.data?.results);
+    });
+  };
+  const getFilteredNFTData = async (targetCategory) => {
+    await api('get', `nft/get/?category=${targetCategory}`).then((res) => {
+      setFilteredData(res?.data?.Nfts);
+    });
+  };
+
+  useEffect(() => {
+    getAllNFTData();
+  }, []);
+
+  useEffect(() => {
+    getFilteredNFTData(value);
+  }, [value]);
+
+  const handlefilter = (targetFilterValue) => {
+    if (targetFilterValue === 'recent') {
+      setChecked({ checked, recent: true });
+    } else if (targetFilterValue === 'lowest') {
+      setChecked({ checked, lowest: true });
+    } else if (targetFilterValue === 'top') {
+      setChecked({ checked, top: true });
+    }
+  };
+  const handleResetFilter = () => {
+    setPriceValues({ ...priceValues, min: '', max: '' });
+    setChecked({ ...checked, recent: false, lowest: false, top: false });
+    getAllNFTData();
+  };
+  const handlePriceChange = (e) => {
+    setPriceValues({ ...priceValues, [e.target.name]: e.target.value });
+  };
 
   const handleShowFilter = () => {
     setShowFilter(!showFilter);
@@ -82,17 +129,47 @@ export default function NftFiltration() {
             </div>
           </div>
           <div className="NftFiltrationCategoryTab">
-            <div className='"NftFiltrationResultDiv'>22,133,154 results</div>
+            <div className='"NftFiltrationResultDiv'>{nftData?.length} results</div>
             <div className="NftFiltrationTabs">
               <Box sx={{ width: '100%' }}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                   <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-                    <Tab className="NftFiltrationTab" label="All items" {...a11yProps(0)} />
-                    <Tab className="NftFiltrationTab" label="Art" {...a11yProps(1)} />
-                    <Tab className="NftFiltrationTab" label="Game" {...a11yProps(2)} />
-                    <Tab className="NftFiltrationTab" label="Photography" {...a11yProps(3)} />
-                    <Tab className="NftFiltrationTab" label="Music" {...a11yProps(4)} />
-                    <Tab className="NftFiltrationTab" label="Video" {...a11yProps(5)} />
+                    <Tab
+                      className="NftFiltrationTab"
+                      value="All items"
+                      label="All items"
+                      {...a11yProps('All items')}
+                    />
+                    <Tab
+                      className="NftFiltrationTab"
+                      value="Art"
+                      label="Art"
+                      {...a11yProps('Art')}
+                    />
+                    <Tab
+                      className="NftFiltrationTab"
+                      value="Game"
+                      label="Game"
+                      {...a11yProps('Game')}
+                    />
+                    <Tab
+                      className="NftFiltrationTab"
+                      value="Photography"
+                      label="Photography"
+                      {...a11yProps('Photography')}
+                    />
+                    <Tab
+                      className="NftFiltrationTab"
+                      value="Music"
+                      label="Music"
+                      {...a11yProps('Music')}
+                    />
+                    <Tab
+                      className="NftFiltrationTab"
+                      value="Video"
+                      label="Video"
+                      {...a11yProps('Video')}
+                    />
                   </Tabs>
                 </Box>
               </Box>
@@ -111,7 +188,7 @@ export default function NftFiltration() {
                   aria-hidden="true"
                 >
                   <div>
-                    <div className="NftFiltrationDropTitle">Recently added</div>
+                    <div className="NftFiltrationDropTitle">Filter</div>
                   </div>
 
                   {recentDrop ? (
@@ -128,7 +205,35 @@ export default function NftFiltration() {
                   }}
                 >
                   <Collapse in={recentDrop}>
-                    <div className="NftFiltrationCollapseDiv">No Data Available</div>
+                    <div className="recent_options">
+                      <FormControlLabel
+                        className="collectionFilterCheckboxLabel"
+                        control={<Checkbox checked={checked.recent} size="large" />}
+                        label="Recently added"
+                        name="recent"
+                        onChange={(e) => {
+                          handlefilter(e.target.name);
+                        }}
+                      />
+                      <FormControlLabel
+                        className="collectionFilterCheckboxLabel"
+                        control={<Checkbox checked={checked.top} size="large" />}
+                        label="Top Rated"
+                        name="top"
+                        onChange={(e) => {
+                          handlefilter(e.target.name);
+                        }}
+                      />
+                      <FormControlLabel
+                        className="collectionFilterCheckboxLabel"
+                        control={<Checkbox checked={checked.lowest} size="large" />}
+                        label="Lowest to Highest"
+                        name="lowest"
+                        onChange={(e) => {
+                          handlefilter(e.target.name);
+                        }}
+                      />
+                    </div>
                   </Collapse>
                 </Box>
               </Box>
@@ -192,13 +297,31 @@ export default function NftFiltration() {
                         </Box>
                         <div className="NftFiltrationPriceLimitDiv">
                           <div className="NftFiltrationPriceLimitLeft">
-                            <div className="NftFiltrationPriceLimitMin">Min.</div>
+                            <input
+                              className="NftFiltrationPriceLimitMin"
+                              value={priceValues.min}
+                              name="min"
+                              placeholder="Min"
+                              onChange={handlePriceChange}
+                            />
                             <div className="NftFiltrationPriceLimitDivider"> -</div>
-                            <div className="NftFiltrationPriceLimitMax">Max.</div>
+                            <input
+                              className="NftFiltrationPriceLimitMin"
+                              value={priceValues.max}
+                              name="max"
+                              placeholder="Max"
+                              onChange={handlePriceChange}
+                            />
                           </div>
-                          <div className="NftFiltrationPriceLimitRight">
+                          <button
+                            type="button"
+                            onClick={() => {
+                              handlefilter('filterByPrice');
+                            }}
+                            className="NftFiltrationPriceLimitRight"
+                          >
                             <KeyboardArrowRightIcon sx={{ color: 'black' }} fontSize="large" />
-                          </div>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -235,7 +358,7 @@ export default function NftFiltration() {
                   </Collapse>
                 </Box>
               </Box>
-              <Box className="NftFiltrationDropDownBox">
+              {/* <Box className="NftFiltrationDropDownBox">
                 <div
                   className="NftFiltrationDropDownDiv"
                   onClick={() => {
@@ -264,7 +387,7 @@ export default function NftFiltration() {
                     <div className="NftFiltrationCollapseDiv">No Data Available</div>
                   </Collapse>
                 </Box>
-              </Box>
+              </Box> */}
               <Box className="NftFiltrationDropDownBox">
                 <div
                   className="NftFiltrationDropDownDiv"
@@ -297,67 +420,89 @@ export default function NftFiltration() {
               </Box>
 
               <div className="NftFiltrationResetDiv">
-                <div className="NftFiltrationResetIcon">
+                <button
+                  type="button"
+                  onClick={handleResetFilter}
+                  className="NftFiltrationResetIcon"
+                >
                   <CancelIcon sx={{ color: 'white' }} />
-                </div>
+                </button>
                 <div className="NftFiltrationResetText">Reset filter</div>
               </div>
             </div>
           )}
           <Box sx={{ width: showFilter ? '70%' : '100%' }}>
-            <TabPanel value={value} index={0}>
+            <TabPanel value={value} index="All items">
               <Grid className="NftFiltrationGridContainer" container>
-                {[...Array(15)].map(() => (
-                  <Grid className="NftFiltrationGrid" md={showFilter ? 3.8 : 2.8}>
-                    <NftCard />
-                  </Grid>
-                ))}
+                {nftData &&
+                  nftData.map((item) => {
+                    return (
+                      <Grid className="NftFiltrationGrid" md={showFilter ? 3.8 : 2.8}>
+                        <NftCard nftData={item} />
+                      </Grid>
+                    );
+                  })}
               </Grid>
             </TabPanel>
-            <TabPanel value={value} index={1}>
+            <TabPanel value={value} index="Art">
               <Grid className="NftFiltrationGridContainer" container>
-                {[...Array(4)].map(() => (
-                  <Grid className="NftFiltrationGrid" md={showFilter ? 3.8 : 2.8}>
-                    <NftCard />
-                  </Grid>
-                ))}
-              </Grid>{' '}
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-              <Grid className="NftFiltrationGridContainer" container>
-                {[...Array(15)].map(() => (
-                  <Grid className="NftFiltrationGrid" md={showFilter ? 3.8 : 2.8}>
-                    <NftCard />
-                  </Grid>
-                ))}
+                {filteredData &&
+                  filteredData.map((item) => {
+                    return (
+                      <Grid className="NftFiltrationGrid" md={showFilter ? 3.8 : 2.8}>
+                        <NftCard nftData={item} />
+                      </Grid>
+                    );
+                  })}
               </Grid>
             </TabPanel>
-            <TabPanel value={value} index={3}>
+            <TabPanel value={value} index="Game">
               <Grid className="NftFiltrationGridContainer" container>
-                {[...Array(15)].map(() => (
-                  <Grid className="NftFiltrationGrid" md={showFilter ? 3.8 : 2.8}>
-                    <NftCard />
-                  </Grid>
-                ))}
-              </Grid>{' '}
+                {filteredData &&
+                  filteredData.map((item) => {
+                    return (
+                      <Grid className="NftFiltrationGrid" md={showFilter ? 3.8 : 2.8}>
+                        <NftCard nftData={item} />
+                      </Grid>
+                    );
+                  })}
+              </Grid>
             </TabPanel>
-            <TabPanel value={value} index={4}>
+            <TabPanel value={value} index="Photograpghy">
               <Grid className="NftFiltrationGridContainer" container>
-                {[...Array(15)].map(() => (
-                  <Grid className="NftFiltrationGrid" md={showFilter ? 3.8 : 2.8}>
-                    <NftCard />
-                  </Grid>
-                ))}
-              </Grid>{' '}
+                {filteredData &&
+                  filteredData.map((item) => {
+                    return (
+                      <Grid className="NftFiltrationGrid" md={showFilter ? 3.8 : 2.8}>
+                        <NftCard nftData={item} />
+                      </Grid>
+                    );
+                  })}
+              </Grid>
             </TabPanel>
-            <TabPanel value={value} index={5}>
+            <TabPanel value={value} index="Music">
               <Grid className="NftFiltrationGridContainer" container>
-                {[...Array(15)].map(() => (
-                  <Grid className="NftFiltrationGrid" md={showFilter ? 3.8 : 2.8}>
-                    <NftCard />
-                  </Grid>
-                ))}
-              </Grid>{' '}
+                {filteredData &&
+                  filteredData.map((item) => {
+                    return (
+                      <Grid className="NftFiltrationGrid" md={showFilter ? 3.8 : 2.8}>
+                        <NftCard nftData={item} />
+                      </Grid>
+                    );
+                  })}
+              </Grid>
+            </TabPanel>
+            <TabPanel value={value} index="Video">
+              <Grid className="NftFiltrationGridContainer" container>
+                {filteredData &&
+                  filteredData.map((item) => {
+                    return (
+                      <Grid className="NftFiltrationGrid" md={showFilter ? 3.8 : 2.8}>
+                        <NftCard nftData={item} />
+                      </Grid>
+                    );
+                  })}
+              </Grid>
             </TabPanel>
             <div className="NftFiltrationLoadBtnDiv">
               <div className="NftFiltrationLoadBtn">Load More</div>

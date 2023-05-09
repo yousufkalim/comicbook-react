@@ -1,10 +1,17 @@
 // Init
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Logo from '../../assets/gif/cba.gif';
 
 // Component
 export default function Navbar() {
+  const nav = useNavigate();
+  const handleConnectWallet = () => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      nav('/login');
+    }
+  };
   return (
     <div className="navbarContainer">
       <div className="navbarLogoDiv">
@@ -19,7 +26,7 @@ export default function Navbar() {
             to="/marketplace"
             className={({ isActive }) => (isActive ? 'activeNavLink' : 'navLink')}
           >
-            Market place
+            Market Place
           </NavLink>
           <NavLink
             to="/nftdetail"
@@ -35,7 +42,9 @@ export default function Navbar() {
           </NavLink>
         </div>
       </div>
-      <div className="navbarConnectWalletDiv">Connect Wallet</div>
+      <button type="button" className="navbarConnectWalletDiv" onClick={handleConnectWallet}>
+        Connect Wallet
+      </button>
     </div>
   );
 }

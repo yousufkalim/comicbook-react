@@ -5,14 +5,16 @@ import OwnerImg from '../../assets/images/owner_profile.png';
 import CreatorImg from '../../assets/images/creator_profile.png';
 import Eth from '../../assets/images/eth_sign.svg';
 // Component
-export default function NftCard() {
+export default function NftCard({ nftData }) {
+  const sortedPrices = nftData?.bids?.sort((a, b) => +b.price - +a.price);
+  const highestPrice = sortedPrices[0];
   return (
-    <div className="NftCardContainer">
+    <div key={nftData?.id} className="NftCardContainer">
       <div className="NftCardImageDiv">
-        <img src={NftImage} alt="nft" />
+        <img src={nftData?.doc ? nftData?.doc : NftImage} alt="nft" />
       </div>
       <div className="NftCardDataDiv">
-        <div className="NftCardName">The Killing Joker</div>
+        <div className="NftCardName">{nftData?.name}</div>
         <div className="NftCardSubHeadingsDiv">
           <div className="NftCardBidHeading">Highest bid</div>
           <div className="NftCardExpiryHeading">Ends in</div>
@@ -20,7 +22,7 @@ export default function NftCard() {
         <div className="NftCardSubHeadingsDiv">
           <div className="NftCardPrice">
             <img src={Eth} alt="Eth" />
-            <div>0.078</div>
+            <div>{highestPrice?.price}</div>
           </div>
           <div className="NftCardExpiry">13h 36m 30s</div>
         </div>
@@ -32,7 +34,9 @@ export default function NftCard() {
             </div>
             <div className="NftCardCreatorTextDiv">
               <div className="NftCardCreatorName">Creator</div>
-              <div className="NftCardCreatorUsername">@sadir_1</div>
+              <div className="NftCardCreatorUsername">
+                {nftData?.user && `${nftData?.user?.first_name} ${nftData?.user?.last_name}`}
+              </div>
             </div>
           </div>
           <div className="NftCardOwner">
@@ -41,7 +45,11 @@ export default function NftCard() {
             </div>
             <div className="NftCardCreatorTextDiv">
               <div className="NftCardCreatorName">Owner</div>
-              <div className="NftCardCreatorUsername">@asma0</div>
+              <div className="NftCardCreatorUsername">
+                {nftData?.owner[0]
+                  ? `${nftData?.owner[0]?.first_name} ${nftData?.owner[0]?.last_name}`
+                  : ''}
+              </div>
             </div>
           </div>
         </div>

@@ -8,13 +8,16 @@
   position: fixed;
   /* background-color: red; */
 }
+
 .navbarLogoDiv {
   width: 15%;
   /* background-color: rgb(121, 77, 77); */
 }
+
 .navbarLogoDiv img {
   width: 100%;
 }
+
 .navbarMenuDiv {
   width: 60%;
   display: flex;
@@ -23,6 +26,7 @@
   /* background-color: green; */
   /* background-color: rgb(216, 205, 205); */
 }
+
 .navbarOptionsDiv {
   width: 65%;
   display: flex;
@@ -30,6 +34,7 @@
   justify-content: space-evenly;
   /* background-color: blue; */
 }
+
 .navLink {
   text-decoration: none;
   /* font-size: 25px; */
@@ -43,6 +48,7 @@
   font-size: 20px;
   color: #ffffff;
 }
+
 .activeNavLink {
   font-family: 'Orbitron';
   font-style: normal;
@@ -67,7 +73,10 @@
   margin-top: 5%;
   background-color: #f37342;
 }
+
 .navbarConnectWalletDiv {
+  border: none;
+  outline: none;
   width: fit-content;
   padding: 1% 2%;
   text-transform: capitalize;

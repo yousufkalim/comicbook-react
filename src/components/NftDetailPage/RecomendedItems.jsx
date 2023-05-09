@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import NftCard from '../common/NftCard';
+import api from '../../api';
 
 const responsive = {
   desktop: {
@@ -20,38 +21,29 @@ const responsive = {
   },
 };
 export default function RecomendedItems() {
+  const [nftData, setNftData] = useState([]);
+
+  const getAllNFTData = async () => {
+    await api('get', 'nft/').then((res) => {
+      setNftData(res?.data?.results);
+    });
+  };
+  useEffect(() => {
+    getAllNFTData();
+  }, []);
+
   return (
     <div className="RecomendedItemsContainer">
       <div className="RecomendedItemsHeading">Recomended Items</div>
       <div className="RecomendedItemsSliderDiv">
         <Carousel responsive={responsive} showDots className="RecomendedItemsCarousel">
-          <div className="newDropsSliderItems">
-            <NftCard />
-          </div>
-          <div className="newDropsSliderItems">
-            <NftCard />
-          </div>
-          <div className="newDropsSliderItems">
-            <NftCard />
-          </div>
-          <div className="newDropsSliderItems">
-            <NftCard />
-          </div>
-          <div className="newDropsSliderItems">
-            <NftCard />
-          </div>
-          <div className="newDropsSliderItems">
-            <NftCard />
-          </div>
-          <div className="newDropsSliderItems">
-            <NftCard />
-          </div>
-          <div className="newDropsSliderItems">
-            <NftCard />
-          </div>
-          <div className="newDropsSliderItems">
-            <NftCard />
-          </div>
+          {nftData.map((item) => {
+            return (
+              <div className="newDropsSliderItems">
+                <NftCard nftData={item} />
+              </div>
+            );
+          })}
         </Carousel>
       </div>
     </div>
