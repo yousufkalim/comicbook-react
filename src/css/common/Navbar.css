@@ -1,16 +1,13 @@
 .navbarContainer {
   width: 100%;
-  background: transparent;
   padding: 2% 5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  /* background-color: red; */
 }
 .navbarLogoDiv {
   width: 15%;
-  /* background-color: rgb(121, 77, 77); */
 }
 .navbarLogoDiv img {
   width: 100%;
@@ -20,7 +17,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: green; */
   /* background-color: rgb(216, 205, 205); */
 }
 .navbarOptionsDiv {
@@ -28,16 +24,10 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  /* background-color: blue; */
 }
 .navLink {
   text-decoration: none;
-  /* font-size: 25px; */
-  /* text-align: center; */
   text-transform: capitalize;
-  /* padding: 0 1% 1% 1%; */
-  /* border-bottom: 3px solid #f37342; */
-
   font-family: 'Orbitron';
   font-weight: 600;
   font-size: 20px;
@@ -49,12 +39,11 @@
   font-weight: 600;
   font-size: 20px;
   background: radial-gradient(
-      87.68% 87.68% at 95.36% 14.36%,
-      #ffd840 0%,
-      #f3acff 55.86%,
-      #8aecff 100%
-    )
-    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    87.68% 87.68% at 95.36% 14.36%,
+    #ffd840 0%,
+    #f3acff 55.86%,
+    #8aecff 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -77,11 +66,12 @@
   text-align: center;
   color: #000000;
   background: radial-gradient(
-      87.68% 87.68% at 95.36% 14.36%,
-      #ffd840 0%,
-      #f3acff 55.86%,
-      #8aecff 100%
-    )
-    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    87.68% 87.68% at 95.36% 14.36%,
+    #ffd840 0%,
+    #f3acff 55.86%,
+    #8aecff 100%
+  );
   border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
 }
