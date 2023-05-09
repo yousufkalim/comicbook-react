@@ -1,9 +1,10 @@
 // Init
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import LogoIcon from '../../assets/gif/logoIcon.gif';
 import NewDropCard from '../common/NewDropCard';
 import 'react-multi-carousel/lib/styles.css';
+import api from '../../api';
 // Component
 const responsive = {
   desktop: {
@@ -23,6 +24,15 @@ const responsive = {
   },
 };
 export default function NewDrops() {
+  const [nftData, setNftData] = useState([]);
+  const getRecentNft = async () => {
+    await api('get', `nft/?recent=${-1}`).then((res) => {
+      setNftData(res?.data?.results);
+    });
+  };
+  useEffect(() => {
+    getRecentNft();
+  }, []);
   return (
     <div className="newDropsContainer">
       <div className="newDropsHeaderDiv">
@@ -41,33 +51,13 @@ export default function NewDrops() {
       </div>
       <div className="newDropsSliderDiv">
         <Carousel responsive={responsive}>
-          <div className="newDropsSliderItems">
-            <NewDropCard />
-          </div>
-          <div className="newDropsSliderItems">
-            <NewDropCard />
-          </div>
-          <div className="newDropsSliderItems">
-            <NewDropCard />
-          </div>
-          <div className="newDropsSliderItems">
-            <NewDropCard />
-          </div>
-          <div className="newDropsSliderItems">
-            <NewDropCard />
-          </div>
-          <div className="newDropsSliderItems">
-            <NewDropCard />
-          </div>
-          <div className="newDropsSliderItems">
-            <NewDropCard />
-          </div>
-          <div className="newDropsSliderItems">
-            <NewDropCard />
-          </div>
-          <div className="newDropsSliderItems">
-            <NewDropCard />
-          </div>
+          {nftData.map((item) => {
+            return (
+              <div key={item?.id} className="newDropsSliderItems">
+                <NewDropCard nftData={item} />
+              </div>
+            );
+          })}
         </Carousel>
       </div>
     </div>

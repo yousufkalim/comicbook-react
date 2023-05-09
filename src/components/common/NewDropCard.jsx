@@ -3,7 +3,7 @@ import { Rating } from '@mui/material';
 import React from 'react';
 import CardImg from '../../assets/images/card_nft.png';
 // Component
-export default function NewDropCard() {
+export default function NewDropCard({ nftData }) {
   return (
     <div className="NewDropCardContainer">
       <div id="cardImg" className="NewDropCardBgImgDiv">
@@ -12,7 +12,7 @@ export default function NewDropCard() {
       <div id="cardHover" className="NewDropCardHoverDiv">
         <div className="NewDropCardBidBtn">Place a Bid</div>
         <div className="NewDropCardDetialDiv">
-          <div className="NewDropCardTitle">The Killings Joker</div>
+          <div className="NewDropCardTitle">{nftData?.name}</div>
           <div className="NewDropCardAuctionDiv">
             <div className="NewDropCardRating">
               <Rating size="small" defaultValue={5} />
@@ -23,7 +23,7 @@ export default function NewDropCard() {
             <div className="NewDropCardCurrentBidDiv">
               <div className="NewDropCardBidTitle">Current Bid</div>
               <div className="NewDropCardEthPrice">
-                <div className="NewDropCardEthAmount">0.70</div>
+                <div className="NewDropCardEthAmount">{nftData?.bids[0]?.price}</div>
                 <div className="NewDropCardEthSymbol">ETH</div>
               </div>
               <div className="NewDropCardUSDPrice">$245665</div>

@@ -66,9 +66,9 @@ export default function NftFiltration() {
   const [nftData, setNftData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [checked, setChecked] = useState({
-    recent: false,
-    top: false,
-    lowest: false,
+    recent: 0,
+    top: 0,
+    lowest: 0,
   });
   const getAllNFTData = async () => {
     await api('get', 'nft/').then((res) => {
@@ -81,27 +81,42 @@ export default function NftFiltration() {
     });
   };
 
-  useEffect(() => {
-    getAllNFTData();
-  }, []);
+  const getRecentNft = async (targetCheck) => {
+    await api('get', `nft/?recent=${targetCheck}`).then((res) => {
+      setNftData(res?.data?.results);
+      setFilteredData(res?.data?.results);
+    });
+  };
+  const getLowestToHighesttNft = async (targetCheck) => {
+    await api('get', `nft/?lth=${targetCheck}`).then((res) => {
+      setNftData(res?.data?.results);
+      setFilteredData(res?.data?.results);
+    });
+  };
 
   useEffect(() => {
-    getFilteredNFTData(value);
-  }, [value]);
+    if (checked.recent === -1) {
+      getRecentNft(checked.recent);
+    } else if (checked.lowest === 1) {
+      getLowestToHighesttNft(checked.lowest);
+    } else {
+      getFilteredNFTData(value);
+      getAllNFTData();
+    }
+  }, [value, checked]);
 
   const handlefilter = (targetFilterValue) => {
     if (targetFilterValue === 'recent') {
-      setChecked({ checked, recent: true });
+      setChecked({ checked, recent: -1 });
     } else if (targetFilterValue === 'lowest') {
-      setChecked({ checked, lowest: true });
+      setChecked({ checked, lowest: 1 });
     } else if (targetFilterValue === 'top') {
-      setChecked({ checked, top: true });
+      setChecked({ checked, top: 1 });
     }
   };
   const handleResetFilter = () => {
     setPriceValues({ ...priceValues, min: '', max: '' });
-    setChecked({ ...checked, recent: false, lowest: false, top: false });
-    getAllNFTData();
+    setChecked({ ...checked, recent: 0, lowest: 0, top: 0 });
   };
   const handlePriceChange = (e) => {
     setPriceValues({ ...priceValues, [e.target.name]: e.target.value });
