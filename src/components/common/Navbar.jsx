@@ -1,6 +1,8 @@
 // Init
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import useScrollPosition from '../../utils/ScrollPosition';
+
 import Logo from '../../assets/gif/cba.gif';
 
 // Component
@@ -10,13 +12,21 @@ export default function Navbar() {
     const token = localStorage.getItem('token');
     if (!token) {
       nav('/login');
+    } else {
+      nav('/wallet');
     }
   };
+  const position = useScrollPosition();
   return (
-    <div className="navbarContainer">
-      <div className="navbarLogoDiv">
+    <div
+      className="navbarContainer"
+      style={{
+        background: position > 10 ? 'black' : 'transparent',
+      }}
+    >
+      <NavLink to="/" className="navbarLogoDiv">
         <img src={Logo} alt="logo" />
-      </div>
+      </NavLink>
       <div className="navbarMenuDiv">
         <div className="navbarOptionsDiv">
           <NavLink to="/" className={({ isActive }) => (isActive ? 'activeNavLink' : 'navLink')}>

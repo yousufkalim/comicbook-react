@@ -1,0 +1,41 @@
+.walletCardContainer {
+  padding: 4%;
+  width: 95%;
+  /* height: 45vh; */
+  background: linear-gradient(89.9deg, rgba(21, 39, 65, 0.7) 0.09%, rgba(13, 21, 38, 0.7) 99.92%);
+  transform: scale(1);
+  transition: 0.5s;
+}
+.walletCardContainer:hover {
+  transform: scale(1.08);
+}
+.walletCardImageDiv {
+  height: 60%;
+  background: linear-gradient(89.9deg, rgba(21, 39, 65, 0.7) 0.09%, rgba(13, 21, 38, 0.7) 99.92%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.walletCardImageDiv img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+.walletCardTextDiv {
+  text-align: center;
+  font-family: 'Rubik';
+}
+.walletCardTextDiv h3 {
+  font-weight: 700;
+  font-size: 28px;
+  color: #ffffff;
+  margin: 4% 0;
+  padding: 2% 0;
+}
+.walletCardTextDiv p {
+  font-weight: 400;
+  font-size: 21px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 2% 0;
+  line-height: 32px;
+}

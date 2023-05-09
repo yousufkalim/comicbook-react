@@ -19,6 +19,11 @@
 @import url('./signup/SignUpForm.css');
 @import url('./collection/CollectionFilter.css');
 @import url('./collection/CollectionCard.css');
+@import url('./wallet/ConnectWallet.css');
+@import url('./wallet/WalletCard.css');
+@import url('./createNft/CreateNftForm.css');
+@import url('./createNft/PreviewCard.css');
+@import url('./sellNft/SellNftForm.css');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rubik:wght@400;500;600;700;800&display=swap');
 /* Defaults */
 * {
