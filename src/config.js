@@ -1,4 +1,4 @@
-let baseUrl = 'http://localhost:5000/api/v1';
+let baseUrl = 'http://localhost:5000/api/';
 
 if (window.location.host === 'transcription-dev.falconweb.app') {
   baseUrl = 'https://transcription-api-dev.falconweb.app/api/v1';
