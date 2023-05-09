@@ -1,0 +1,36 @@
+.connectWalletContainer {
+  padding: 8% 5%;
+}
+.connectWalletHeaderDiv {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 3% 0;
+}
+.connectWalletHeaderTitle {
+  font-family: 'Orbitron';
+  font-weight: 700;
+  font-size: 80px;
+  background: radial-gradient(
+      87.68% 87.68% at 95.36% 14.36%,
+      #ffd840 0%,
+      #f3acff 55.86%,
+      #8aecff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.connectWalletHeaderDesp {
+  font-family: 'Rubik';
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  color: #cccccc;
+}
+.connectWalletSliderDiv {
+  width: 100%;
+}

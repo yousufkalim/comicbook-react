@@ -1,15 +1,23 @@
 // Init
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import useScrollPosition from '../../utils/ScrollPosition';
+
 import Logo from '../../assets/gif/cba.gif';
 
 // Component
 export default function Navbar() {
+  const position = useScrollPosition();
   return (
-    <div className="navbarContainer">
-      <div className="navbarLogoDiv">
+    <div
+      className="navbarContainer"
+      style={{
+        background: position > 10 ? 'black' : 'transparent',
+      }}
+    >
+      <NavLink to="/" className="navbarLogoDiv">
         <img src={Logo} alt="logo" />
-      </div>
+      </NavLink>
       <div className="navbarMenuDiv">
         <div className="navbarOptionsDiv">
           <NavLink to="/" className={({ isActive }) => (isActive ? 'activeNavLink' : 'navLink')}>
@@ -35,7 +43,9 @@ export default function Navbar() {
           </NavLink>
         </div>
       </div>
-      <div className="navbarConnectWalletDiv">Connect Wallet</div>
+      <NavLink to="/wallet" className="navbarConnectWalletDiv">
+        Connect Wallet
+      </NavLink>
     </div>
   );
 }
