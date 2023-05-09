@@ -1,0 +1,251 @@
+.createNftFormContainer {
+  width: 100%;
+  padding: 10% 5% 5% 5%;
+}
+.createNftFormContainer h1 {
+  width: fit-content;
+  font-family: 'Orbitron';
+  font-weight: 700;
+  font-size: 80px;
+  background: radial-gradient(
+    87.68% 87.68% at 95.36% 14.36%,
+    #ffd840 0%,
+    #f3acff 55.86%,
+    #8aecff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 3%;
+}
+.createNftFormUploadTitle {
+  width: 100%;
+}
+.createNftFormUploadTitle h2 {
+  font-family: 'Rubik';
+  font-weight: 500;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+.createNftFormUploadTitle p {
+  font-family: 'Rubik';
+  font-weight: 400;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  opacity: 0.8;
+  margin: 1% 0;
+}
+.createNftFormMainDiv {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.createNftFormDiv {
+  width: 68%;
+  margin: 2 0;
+}
+.createNftFormDiv h2 {
+  font-family: 'Rubik';
+  font-weight: 500;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  margin: 2% 0;
+}
+
+.createNftUploadFileDiv {
+  width: 100%;
+  padding: 12% 5%;
+  /* margin: 2% 0; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(89.9deg, rgba(21, 39, 65, 0.7) 0.09%, rgba(13, 21, 38, 0.7) 99.92%);
+}
+.createNftUploadFileDiv p {
+  font-family: 'Rubik';
+  font-weight: 400;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 1% 0;
+}
+.createNftFormInputDiv {
+  width: 100%;
+}
+.createNftFormLabel {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2% 0;
+}
+.createNftFormLabel h3 {
+  font-family: 'Rubik';
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.createNftFormLabel h4 {
+  font-family: 'Rubik';
+  font-weight: 400;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+.createNftFormLabel p {
+  font-family: 'DM Sans';
+  font-weight: 400;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  color: #ffffff;
+}
+.createNftFormInput {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1.5px solid rgba(255, 255, 255, 0.13);
+  border-radius: 4px;
+}
+.createNftFormInput input {
+  font-family: 'Rubik';
+  font-weight: 400;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 1.5% 2%;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.createNftFormInput textarea {
+  width: 100%;
+  height: 150px; /* adjust as needed */
+  overflow-y: scroll;
+  font-family: 'Rubik';
+  font-weight: 400;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.6);
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 1% 2%;
+}
+.createNftFormDropDiv {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1.36831px solid rgba(255, 255, 255, 0.13);
+  border-radius: 4px;
+  padding: 1.2% 2%;
+}
+.createNftFormDropDiv p {
+  font-family: 'Rubik';
+  font-weight: 400;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.6);
+  /* padding: 1% 2%; */
+  width: 100%;
+  background: transparent;
+}
+.createNftFormDropSubDiv {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1.4px solid rgba(255, 255, 255, 0.13);
+  border-radius: 4px;
+  padding: 4% 2%;
+  margin-top: 5%;
+}
+.createNftFormDropSubDiv p {
+  font-family: 'Rubik';
+  font-weight: 400;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 1% 2%;
+  width: 100%;
+  background: transparent;
+}
+
+.createNftFormCollapse p {
+  padding: 1% 2%;
+  font-family: 'Rubik';
+  font-weight: 400;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.6);
+}
+.createNftFormAddTextDiv {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 2% 0;
+}
+.createNftFormAddTextSubDiv {
+  width: 32%;
+}
+.createNftFormSubP {
+  font-family: 'Rubik';
+  font-weight: 400 !important;
+  font-size: 13px !important;
+  display: flex;
+  align-items: center;
+  color: #ffffff !important;
+}
+.createNftFormDivider {
+  width: 100%;
+  opacity: 0.2;
+  border: 1.30722px solid #ffffff;
+  margin: 5% 0;
+}
+.createNftFormButtonDiv {
+  width: 100%;
+}
+.createNftFormButtonDiv button {
+  background: radial-gradient(
+    87.68% 87.68% at 95.36% 14.36%,
+    #ffd840 0%,
+    #f3acff 55.86%,
+    #8aecff 100%
+  );
+  border-radius: 4px;
+  border: none;
+  width: 30%;
+  padding: 2% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2%;
+  cursor: pointer;
+}
+.createNftFormButtonDiv button p {
+  font-family: 'Orbitron';
+  font-weight: 700;
+  font-size: 23px;
+  color: #000000;
+}
+.createNftPreviewDiv {
+  width: 25%;
+}
