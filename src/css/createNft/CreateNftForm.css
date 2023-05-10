@@ -148,22 +148,34 @@
   background: transparent;
   padding: 1% 2%;
 }
-.createNftFormDropDiv {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1.36831px solid rgba(255, 255, 255, 0.13);
-  border-radius: 4px;
-  padding: 1.2% 2%;
+.css-hfutr2-MuiSvgIcon-root-MuiSelect-icon {
+  color: white !important;
 }
+.createNftFormDropDiv {
+  width: 100% !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1.36831px solid rgba(255, 255, 255, 0.13) !important;
+  border-radius: 4px !important;
+  color: white !important;
+  outline: none !important;
+}
+.createNftFormSelect {
+  width: 100% !important;
+  outline: none !important;
+  color: white !important;
+  background: black !important;
+  border: none !important;
+}
+
+.createNftFormSelect:focus {
+  outline: none !important;
+}
+
 .createNftFormDropDiv p {
   font-family: 'Rubik';
   font-weight: 400;
   font-size: 18px;
   color: rgba(255, 255, 255, 0.6);
-  /* padding: 1% 2%; */
   width: 100%;
   background: transparent;
 }
