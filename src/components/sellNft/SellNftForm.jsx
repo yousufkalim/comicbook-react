@@ -1,25 +1,35 @@
+/* eslint-disable react/button-has-type */
 // Init
 import React from 'react';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
-import Box from '@mui/material/Box';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
+// import Box from '@mui/material/Box';s
 // import UploadFileOutlinedIcon from '@mui/icons-material/UploadFileOutlined';
 import NavigateNextOutlinedIcon from '@mui/icons-material/NavigateNextOutlined';
-import { Collapse } from '@mui/material';
+import { FormControl, MenuItem, Select } from '@mui/material';
 import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
 import AttachMoneySharpIcon from '@mui/icons-material/AttachMoneySharp';
 import CloseSharpIcon from '@mui/icons-material/CloseSharp';
 import AccessTimeSharpIcon from '@mui/icons-material/AccessTimeSharp';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import PreviewCard from '../createNft/PreviewCard';
 import nftImage from '../../assets/images/nft_detail.png';
 
 // Component
 export default function SellNftForm() {
-  const [collectionDrop, setCollectionDrop] = React.useState(false);
-  const [royaltyDrop, setRoyaltyDrop] = React.useState(false);
-  const [currency, setCurrency] = React.useState(false);
-  const [duration, setDuration] = React.useState(false);
+  const [collectionDrop, setCollectionDrop] = React.useState('');
+  const [royaltyDrop, setRoyaltyDrop] = React.useState('');
+  const [currency, setCurrency] = React.useState('');
+  // const [duration, setDuration] = React.useState(false);
+  const [selectedDate, setSelectedDate] = React.useState(null);
+  const [type, setType] = React.useState(false);
+
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+  };
+
+  const today = new Date();
+  const maxDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
 
   return (
     <div className="createNftFormContainer">
@@ -27,191 +37,224 @@ export default function SellNftForm() {
 
       <div className="createNftFormMainDiv">
         <div className="createNftFormDiv">
-          <div className="createNftFormLabel">
-            <h3>Type </h3>
-          </div>
-
-          <div className="sellNftTypeDiv">
-            <div className="sellNftTypeFixedDiv">
-              <AttachMoneySharpIcon fontSize="large" sx={{ color: '#ffffff' }} />
-              <p>Fixed price</p>
-            </div>
-            <div className="sellNftTypeAuctionDiv">
-              <AccessTimeSharpIcon fontSize="large" sx={{ color: '#ffffff' }} />
-
-              <p>Timed Auction</p>
-            </div>
-          </div>
-          <div className="createNftFormInputDiv">
+          <div style={{ width: '100%' }}>
             <div className="createNftFormLabel">
-              <h3>Auction method</h3>
-              <InfoOutlinedIcon sx={{ color: 'white' }} />
+              <h3>Type </h3>
             </div>
-            <div
-              className="createNftFormDropDiv "
-              onClick={() => {
-                setCollectionDrop((prev) => !prev);
-              }}
-              aria-hidden="true"
-            >
-              <p>Sell to high bider</p>
 
-              {collectionDrop ? (
-                <ExpandLess fontSize="large" sx={{ color: 'white' }} />
-              ) : (
-                <ExpandMore fontSize="large" sx={{ color: 'white' }} />
-              )}
+            <div className="sellNftTypeDiv">
+              <button
+                className={type ? 'sellNftTypeFixedDivFocus' : 'sellNftTypeFixedDiv'}
+                onClick={() => setType(true)}
+              >
+                <AttachMoneySharpIcon
+                  fontSize="large"
+                  sx={{ color: type ? '#ffffff' : '#ffffff50' }}
+                />
+                <p>Fixed price</p>
+              </button>
+              <button
+                className={type ? 'sellNftTypeFixedDiv' : 'sellNftTypeFixedDivFocus'}
+                onClick={() => setType(false)}
+              >
+                <AccessTimeSharpIcon
+                  fontSize="large"
+                  sx={{ color: type ? '#ffffff50' : '#ffffff' }}
+                />
+
+                <p>Timed Auction</p>
+              </button>
             </div>
-            <Box
-              sx={{
-                '& > :not(style)': {
-                  display: 'flex',
-                },
-              }}
-            >
-              <Collapse className="createNftFormCollapse" in={collectionDrop}>
-                <p>Sell to high bider</p>
-                <p>Sell to last bider</p>
-                <p>Sell to first bider</p>
-                <p>None</p>
-              </Collapse>
-            </Box>
           </div>
-          <div className="createNftFormInputDiv">
-            <div className="createNftFormLabel">
-              <h3>Starting price</h3>
-              <InfoOutlinedIcon sx={{ color: 'white' }} />
-            </div>
-            <div className="sellNftFormAddTextDiv">
-              <div className="sellNftFormAddCurrencyDiv">
-                <div className="sellNftFormInputDiv ">
-                  <div
-                    className="sellNftFormDropSubDiv "
-                    onClick={() => {
-                      setCurrency((prev) => !prev);
-                    }}
-                    aria-hidden="true"
-                  >
-                    <p className="sellNftFormSubP">WETH</p>
-
-                    {currency ? (
-                      <ExpandLess fontSize="large" sx={{ color: 'white' }} />
-                    ) : (
-                      <ExpandMore fontSize="large" sx={{ color: 'white' }} />
-                    )}
-                  </div>
-                  <Box
-                    sx={{
-                      '& > :not(style)': {
-                        display: 'flex',
-                      },
-                    }}
-                  >
-                    <Collapse className="sellNftFormCollapse" in={currency}>
-                      <p>WETH</p>
-                      <p>BitCoin</p>
-                      <p>Poly</p>
-                    </Collapse>
-                  </Box>
+          {type ? (
+            <div style={{ width: '100%' }}>
+              <div className="createNftFormInputDiv">
+                <div className="createNftFormLabel">
+                  <h3>Price</h3>
+                  <InfoOutlinedIcon sx={{ color: 'white' }} />
                 </div>
-              </div>
+                <div className="sellNftFormAddTextDiv">
+                  <div className="sellNftFormAddCurrencyDiv">
+                    <FormControl className="sellNftFormInputDiv">
+                      <Select
+                        className="sellNftFormDropSubDiv"
+                        value={currency}
+                        onChange={(event) => setCurrency(event.target.value)}
+                        displayEmpty
+                        inputProps={{ 'aria-label': 'Without label' }}
+                      >
+                        <MenuItem value="">WETH</MenuItem>
+                        <MenuItem value={10}>BitCoin</MenuItem>
+                        <MenuItem value={20}>Poly</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </div>
 
-              <div className="sellNftFormAddAmountDiv">
-                <div className="sellNftFormInputDiv">
-                  <div className="sellNftFormDropSubDiv ">
-                    <input className="sellNftFormSubP" placeholder="0.5" />
+                  <div className="sellNftFormAddAmountDiv">
+                    <div className="sellNftFormInputDiv">
+                      <div className="sellNftFormDropSubDiv ">
+                        <input className="sellNftFormSubP" placeholder="0.5" />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+              <div className="sellNftFormAddTextDiv">
+                <div className="sellNftFormAddRoyaltyDiv" style={{ width: '100%' }}>
+                  <div className="sellNftFormInputDiv">
+                    <div className="sellNftFormLabel">
+                      <h3>Royalty</h3>
+                      <InfoOutlinedIcon sx={{ color: 'white' }} />
+                    </div>
+                    <FormControl className="sellNftFormInputDiv">
+                      <Select
+                        className="sellNftFormDropSubDiv"
+                        value={royaltyDrop}
+                        onChange={(event) => setRoyaltyDrop(event.target.value)}
+                        displayEmpty
+                        inputProps={{ 'aria-label': 'Without label' }}
+                      >
+                        <MenuItem value="">5%</MenuItem>
+                        <MenuItem value={10}>10%</MenuItem>
+                        <MenuItem value={20}>20%</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </div>
+                </div>
+              </div>
 
-          <div className="sellNftFormAddTextDiv">
-            <div className="sellNftFormAddRoyaltyDiv">
-              <div className="sellNftFormInputDiv ">
-                <div className="sellNftFormLabel">
-                  <h3>Royalty</h3>
+              <div className="createNftFormDivider" />
+              <div className="createNftFormInputDiv">
+                <div className="createNftFormLabel">
+                  <h3>Fees</h3>
                   <InfoOutlinedIcon sx={{ color: 'white' }} />
                 </div>
-                <div
-                  className="sellNftFormDropSubDiv "
-                  onClick={() => {
-                    setRoyaltyDrop((prev) => !prev);
-                  }}
-                  aria-hidden="true"
-                >
-                  <p className="sellNftFormSubP">10%</p>
-
-                  {royaltyDrop ? (
-                    <ExpandLess fontSize="large" sx={{ color: 'white' }} />
-                  ) : (
-                    <ExpandMore fontSize="large" sx={{ color: 'white' }} />
-                  )}
+                <div className="createNftFormLabel sellNftFromFeeDiv">
+                  <h4>Service fee</h4>
+                  <p>2.5%</p>
                 </div>
-                <Box
-                  sx={{
-                    '& > :not(style)': {
-                      display: 'flex',
-                    },
-                  }}
-                >
-                  <Collapse className="sellNftFormCollapse" in={royaltyDrop}>
-                    <p>5%</p>
-                    <p>10%</p>
-                    <p>20%</p>
-                  </Collapse>
-                </Box>
+              </div>
+              <div className="createNftFormButtonDiv">
+                <button type="submit">
+                  <p>Complete Listing</p>
+                  <NavigateNextOutlinedIcon fontSize="large" />
+                </button>
               </div>
             </div>
-
-            <div className="sellNftFormAddDurationDiv">
-              <div className="sellNftFormInputDiv">
-                <div className="sellNftFormLabel">
-                  <h3>Duration</h3>
+          ) : (
+            <div style={{ width: '100%' }}>
+              <div className="createNftFormInputDiv">
+                <div className="createNftFormLabel">
+                  <h3>Auction method</h3>
                   <InfoOutlinedIcon sx={{ color: 'white' }} />
                 </div>
-                <div
-                  className="sellNftFormDropSubDiv "
-                  onClick={() => {
-                    setDuration((prev) => !prev);
-                  }}
-                  aria-hidden="true"
-                >
-                  <p className="sellNftFormSubP">Seven Days</p>
-                  <CalendarTodayOutlinedIcon fontSize="large" sx={{ color: 'white' }} />
+                <FormControl className="createNftFormDropDiv">
+                  <Select
+                    className="createNftFormSelect"
+                    value={collectionDrop}
+                    onChange={(event) => setCollectionDrop(event.target.value)}
+                    displayEmpty
+                    inputProps={{ 'aria-label': 'Without label' }}
+                  >
+                    <MenuItem value="">None</MenuItem>
+                    <MenuItem value={10}>Sell to high bider</MenuItem>
+                    <MenuItem value={20}>Sell to last bider</MenuItem>
+                    <MenuItem value={30}>Sell to first bider</MenuItem>
+                  </Select>
+                </FormControl>
+              </div>
+              <div className="createNftFormInputDiv">
+                <div className="createNftFormLabel">
+                  <h3>Starting price</h3>
+                  <InfoOutlinedIcon sx={{ color: 'white' }} />
                 </div>
-                <Box
-                  sx={{
-                    '& > :not(style)': {
-                      display: 'flex',
-                    },
-                  }}
-                >
-                  <Collapse className="sellNftFormCollapse" in={duration}>
-                    <p>Select Duration</p>
-                  </Collapse>
-                </Box>
+                <div className="sellNftFormAddTextDiv">
+                  <div className="sellNftFormAddCurrencyDiv">
+                    <FormControl className="sellNftFormInputDiv">
+                      <Select
+                        className="sellNftFormDropSubDiv"
+                        value={currency}
+                        onChange={(event) => setCurrency(event.target.value)}
+                        displayEmpty
+                        inputProps={{ 'aria-label': 'Without label' }}
+                      >
+                        <MenuItem value="">WETH</MenuItem>
+                        <MenuItem value={10}>BitCoin</MenuItem>
+                        <MenuItem value={20}>Poly</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </div>
+
+                  <div className="sellNftFormAddAmountDiv">
+                    <div className="sellNftFormInputDiv">
+                      <div className="sellNftFormDropSubDiv ">
+                        <input className="sellNftFormSubP" placeholder="0.5" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="sellNftFormAddTextDiv">
+                <div className="sellNftFormAddRoyaltyDiv">
+                  <div className="sellNftFormInputDiv ">
+                    <div className="sellNftFormLabel">
+                      <h3>Royalty</h3>
+                      <InfoOutlinedIcon sx={{ color: 'white' }} />
+                    </div>
+                    <FormControl className="sellNftFormInputDiv">
+                      <Select
+                        className="sellNftFormDropSubDiv"
+                        value={royaltyDrop}
+                        onChange={(event) => setRoyaltyDrop(event.target.value)}
+                        displayEmpty
+                        inputProps={{ 'aria-label': 'Without label' }}
+                      >
+                        <MenuItem value="">5%</MenuItem>
+                        <MenuItem value={10}>10%</MenuItem>
+                        <MenuItem value={20}>20%</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </div>
+                </div>
+
+                <div className="sellNftFormAddDurationDiv">
+                  <div className="sellNftFormInputDiv">
+                    <div className="sellNftFormLabel">
+                      <h3>Duration</h3>
+                      <InfoOutlinedIcon sx={{ color: 'white' }} />
+                    </div>
+                    <div className="sellNftFormDropSubDiv ">
+                      <DatePicker
+                        selected={selectedDate}
+                        onChange={handleDateChange}
+                        minDate={maxDate}
+                      />
+                      <CalendarTodayOutlinedIcon fontSize="large" sx={{ color: 'white' }} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="createNftFormDivider" />
+              <div className="createNftFormInputDiv">
+                <div className="createNftFormLabel">
+                  <h3>Fees</h3>
+                  <InfoOutlinedIcon sx={{ color: 'white' }} />
+                </div>
+                <div className="createNftFormLabel sellNftFromFeeDiv">
+                  <h4>Service fee</h4>
+                  <p>2.5%</p>
+                </div>
+              </div>
+              <div className="createNftFormButtonDiv">
+                <button type="submit">
+                  <p>Complete Listing</p>
+                  <NavigateNextOutlinedIcon fontSize="large" />
+                </button>
               </div>
             </div>
-          </div>
-
-          <div className="createNftFormDivider" />
-          <div className="createNftFormInputDiv">
-            <div className="createNftFormLabel">
-              <h3>Fees</h3>
-              <InfoOutlinedIcon sx={{ color: 'white' }} />
-            </div>
-            <div className="createNftFormLabel sellNftFromFeeDiv">
-              <h4>Service fee</h4>
-              <p>2.5%</p>
-            </div>
-          </div>
-          <div className="createNftFormButtonDiv">
-            <button type="submit">
-              <p>Complete Listing</p>
-              <NavigateNextOutlinedIcon fontSize="large" />
-            </button>
-          </div>
+          )}
         </div>
         <div className="sellNftPreviewDiv">
           <div className="sellNftPreviewBtnDiv">
