@@ -153,17 +153,20 @@
 }
 .createNftFormDropDiv {
   width: 100% !important;
-  background: rgba(255, 255, 255, 0.03) !important;
+  /* background: rgba(255, 255, 255, 0.03) !important; */
   border: 1.36831px solid rgba(255, 255, 255, 0.13) !important;
   border-radius: 4px !important;
   color: white !important;
+  outline: none !important;
+}
+.createNftFormDropDiv:focus {
   outline: none !important;
 }
 .createNftFormSelect {
   width: 100% !important;
   outline: none !important;
   color: white !important;
-  background: black !important;
+  background: rgba(255, 255, 255, 0.03) !important;
   border: none !important;
 }
 
