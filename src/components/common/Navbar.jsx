@@ -1,12 +1,21 @@
 // Init
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import useScrollPosition from '../../utils/ScrollPosition';
 
 import Logo from '../../assets/gif/cba.gif';
 
 // Component
 export default function Navbar() {
+  const nav = useNavigate();
+  const handleConnectWallet = () => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      nav('/login');
+    } else {
+      nav('/wallet');
+    }
+  };
   const position = useScrollPosition();
   return (
     <div
@@ -27,7 +36,7 @@ export default function Navbar() {
             to="/marketplace"
             className={({ isActive }) => (isActive ? 'activeNavLink' : 'navLink')}
           >
-            Market place
+            Market Place
           </NavLink>
           <NavLink
             to="/nftdetail"
@@ -43,9 +52,9 @@ export default function Navbar() {
           </NavLink>
         </div>
       </div>
-      <NavLink to="/wallet" className="navbarConnectWalletDiv">
+      <button type="button" className="navbarConnectWalletDiv" onClick={handleConnectWallet}>
         Connect Wallet
-      </NavLink>
+      </button>
     </div>
   );
 }
